@@ -20,16 +20,16 @@ export const ui = {
         "header.select-label": "Select language",
         "header.close-button-label": "Close navigation",
         // Hero translations
-        "hero.headline": "UX/UI React Developer",
+        "hero.headline": "UX/UI React Engineer",
         "hero.badge": "Open to Work",
-        "hero.description": "Hello! I'm a frontend developer with 5+ years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
+        "hero.description": "Hello! I'm a frontend engineer with 5+ years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
         "hero.download-button": "Download CV",
         // Experience translations
         "experience.prefix": "Summary of my",
         "experience.title": "Professional Experience",
         "experience.kandui-job-title": "React Team Leader",
         "experience.kandui-job-description": "Led UX/UI and React team at a FinTech startup, delivering investment-focused products and scalable, user-centric tools through strategic frontend development and design.",
-        "experience.rg-corp-job-title": "React Developer",
+        "experience.rg-corp-job-title": "React Engineer",
         "experience.rg-corp-job-description": "Designed and developed views for a FinTech startup, focused on user-friendly KYC forms and customer enrollment. Refactored legacy React components using hooks to enhance usability.",
         // Technologies translations
         "technologies.prefix": "Some of my favorite",
