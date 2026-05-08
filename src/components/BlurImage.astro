@@ -4,11 +4,12 @@ import { Image } from "astro:assets";
 const { src = "", img, loading = "lazy", classStyles = "", alt, ...props } = Astro.props;
 const IMG_EXTENSION_REGEX = /^(.*)(\.[^.]+)$/;
 const [filename, imgExtension] = src.match(IMG_EXTENSION_REGEX).slice(1);
+const base = import.meta.env.BASE_URL;
 ---
 
 <div
     class={`blur-placeholder ${classStyles}`}
-    style={`background-image: url(/${filename}-small${imgExtension});`}
+    style={`background-image: url(${base}/${filename}-small${imgExtension});`}
     {...props}
 >
     <Image src={img} loading={loading} class={classStyles} alt={alt} />
