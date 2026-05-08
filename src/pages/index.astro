@@ -33,14 +33,16 @@ const t = useTranslations(lang);
 		const preferredLang = navigator.language || defaultLang;
 		const langCode = preferredLang.split("-")[0];
 		const isValidPreferredLang = Object.keys(languages).includes(langCode);
+		const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+		const rootPath = `${base}/`;
 
 		if (
 			langCode !== defaultLang &&
 			isValidPreferredLang &&
-			window.location.pathname === "/"
+			window.location.pathname === rootPath
 		) {
 			sessionStorage.setItem("hasRedirected", "true");
-			window.location.href = `/${langCode}/`;
+			window.location.href = `${base}/${langCode}/`;
 		}
 	}
 </script>

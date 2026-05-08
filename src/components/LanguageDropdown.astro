@@ -5,6 +5,7 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
 
 const { id = "", classStyles = "", ...props } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <div
@@ -19,7 +20,7 @@ const lang = getLangFromUrl(Astro.url);
 >
 {Object.entries(languages).map(([langKey, label]) => (
     <a
-        href={`${langKey === defaultLang ? '/' : getLocalizedUrl(langKey)}`}
+        href={`${base}${langKey === defaultLang ? '/' : getLocalizedUrl(langKey)}`}
         class={`py-2 px-4 flex items-center cursor-pointer hover:text-blue-100 ${lang === langKey && "text-blue-600"} ${lang === langKey && "pointer-events-none"}`}
         role="option"
         tabindex="-1"
