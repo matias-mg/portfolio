@@ -25,6 +25,7 @@ const t = useTranslations(lang);
 
 <script>
 	import { defaultLang, languages } from "../i18n/ui";
+	import { BASE_URL } from "../utils/constants";
 
 	if (
 		typeof window !== "undefined" &&
@@ -33,8 +34,7 @@ const t = useTranslations(lang);
 		const preferredLang = navigator.language || defaultLang;
 		const langCode = preferredLang.split("-")[0];
 		const isValidPreferredLang = Object.keys(languages).includes(langCode);
-		const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-		const rootPath = `${base}/`;
+		const rootPath = `${BASE_URL}/`;
 
 		if (
 			langCode !== defaultLang &&
@@ -42,7 +42,7 @@ const t = useTranslations(lang);
 			window.location.pathname === rootPath
 		) {
 			sessionStorage.setItem("hasRedirected", "true");
-			window.location.href = `${base}/${langCode}/`;
+			window.location.href = `${BASE_URL}/${langCode}/`;
 		}
 	}
 </script>

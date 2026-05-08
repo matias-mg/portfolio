@@ -1,6 +1,7 @@
 ---
 import { ui } from "../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { BASE_URL } from "../utils/constants";
 import SectionTitle from "./SectionTitle.astro";
 
 const ICON_CONTAINER_BASE_STYLES =
@@ -9,7 +10,6 @@ const ICON_CONTAINER_BASE_STYLES =
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const techList = ui[lang]["technologies.list"];
-const base = import.meta.env.BASE_URL;
 
 const TECH_LIST = [
     {
@@ -17,21 +17,21 @@ const TECH_LIST = [
         classStyles: "bg-black",
         subtitle: techList.find((t) => t.name === "React").subtitle,
         description: techList.find((t) => t.name === "React").description,
-        iconRoute: `${base}/icons/react-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/react-icon.svg`,
     },
     {
         name: "Next.js",
         classStyles: "bg-[#D9D9D9]",
         subtitle: techList.find((t) => t.name === "Next.js").subtitle,
         description: techList.find((t) => t.name === "Next.js").description,
-        iconRoute: `${base}/icons/nextjs-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/nextjs-icon.svg`,
     },
     {
         name: "GraphQL",
         classStyles: "bg-gradient-to-t from-[#1B0514] to-[#37162C]",
         subtitle: techList.find((t) => t.name === "GraphQL").subtitle,
         description: techList.find((t) => t.name === "GraphQL").description,
-        iconRoute: `${base}/icons/graphql-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/graphql-icon.svg`,
     },
     {
         name: "Tailwind CSS",
@@ -39,28 +39,28 @@ const TECH_LIST = [
         subtitle: techList.find((t) => t.name === "Tailwind CSS").subtitle,
         description: techList.find((t) => t.name === "Tailwind CSS")
             .description,
-        iconRoute: `${base}/icons/tailwind-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/tailwind-icon.svg`,
     },
     {
         name: "TypeScript",
         classStyles: "bg-[#007ACC]",
         subtitle: techList.find((t) => t.name === "TypeScript").subtitle,
         description: techList.find((t) => t.name === "TypeScript").description,
-        iconRoute: `${base}/icons/typescript-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/typescript-icon.svg`,
     },
     {
         name: "Storybook",
         classStyles: "bg-[#fff]",
         subtitle: techList.find((t) => t.name === "Storybook").subtitle,
         description: techList.find((t) => t.name === "Storybook").description,
-        iconRoute: `${base}/icons/storybook-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/storybook-icon.svg`,
     },
     {
         name: "Jest",
         classStyles: "bg-gradient-to-t from-[#461A20] to-[#77343E]",
         subtitle: techList.find((t) => t.name === "Jest").subtitle,
         description: techList.find((t) => t.name === "Jest").description,
-        iconRoute: `${base}/icons/jest-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/jest-icon.svg`,
     },
     {
         name: "React Testing Library",
@@ -69,7 +69,7 @@ const TECH_LIST = [
             .subtitle,
         description: techList.find((t) => t.name === "React Testing Library")
             .description,
-        iconRoute: `${base}/icons/testinglibrary-icon.svg`,
+        iconRoute: `${BASE_URL}/icons/testinglibrary-icon.svg`,
     },
 ];
 ---
