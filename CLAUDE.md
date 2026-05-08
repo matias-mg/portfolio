@@ -52,7 +52,7 @@ Removing or reorganizing those config bits will silently break animations across
 
 `src/components/BlurImage.astro` is the standard `<img>` wrapper. It expects every image to have a `*-small.webp` companion in `public/` (e.g. `profile-pic.webp` ↔ `public/profile-pic-small.webp`) used as a CSS `background-image` placeholder while the full image loads. When adding new images to `src/images/`, generate the corresponding small placeholder in `public/` or `BlurImage` will fail at the regex match.
 
-`astro.config.mjs` uses `passthroughImageService` — Astro does not re-encode images at build time, so dimensions/format are whatever you commit.
+Astro uses its default sharp image service — images in `src/images/` are compressed at build time. Images in `public/` (small placeholders) are not processed. When adding new images to `src/images/`, commit the original high-quality file and let sharp handle compression.
 
 ### Component conventions
 

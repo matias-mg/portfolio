@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from 'astro-robots-txt';
@@ -33,7 +33,4 @@ export default defineConfig({
     locales: ["en", "es", "pt"],
   },
   output: 'static',
-  image: {
-    service: passthroughImageService(),
-  },
 });
