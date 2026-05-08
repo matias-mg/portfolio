@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { BASE_URL } from "../utils/constants";
 import Button from "./Button.astro";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -81,7 +82,7 @@ const t = useTranslations(lang);
       class="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-blue-600 m-auto w-fit leading-none"
     >
       <img
-        src="/icons/github-icon.svg"
+        src={`${BASE_URL}/icons/github-icon.svg`}
         alt="github logo"
         loading="lazy"
         class="size-6"

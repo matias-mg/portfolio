@@ -1,17 +1,18 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
 import "@fontsource-variable/inter";
+import "../styles/global.css";
 import { getLangFromUrl, getLocalizedUrl } from "../i18n/utils";
 import { languages } from "../i18n/ui";
-import { SITE_URL } from "../utils/constants";
+import { BASE_URL, SITE_URL } from "../utils/constants";
 
 const { title, description, blockCanonical = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const transformedSiteURL = `${SITE_URL}${getLocalizedUrl(lang)}`;
-const languageAlternates = Object.keys(languages).map((hrefLang) => ({
-	hrefLang,
-	href: `${SITE_URL}${getLocalizedUrl(hrefLang)}`,
+const languageAlternates = Object.keys(languages).map((hreflang) => ({
+	hreflang,
+	href: `${SITE_URL}${getLocalizedUrl(hreflang)}`,
 }));
 ---
 
@@ -22,8 +23,11 @@ const languageAlternates = Object.keys(languages).map((hrefLang) => ({
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="icon" href={`${BASE_URL}/favicon.ico`} sizes="any" />
+		<link rel="sitemap" href={`${BASE_URL}/sitemap-index.xml`} />
+		<script is:inline>
+			document.documentElement.classList.add("js");
+		</script>
 	</head>
 	<body>
 		<AstroSeo
@@ -36,13 +40,13 @@ const languageAlternates = Object.keys(languages).map((hrefLang) => ({
 			openGraph={{
 				locale: lang,
 				url: transformedSiteURL,
-				site_name: "Matías Medina - React Developer",
+				site_name: "Matías Medina - Frontend Engineer",
 				images: [
 					{
 						url: `${SITE_URL}/profile-pic.webp`,
 						width: 800,
 						height: 600,
-						alt: "Matías Medina - React Developer",
+						alt: "Matías Medina - Frontend Engineer",
 					},
 				],
 				type: "profile",
@@ -61,7 +65,7 @@ const languageAlternates = Object.keys(languages).map((hrefLang) => ({
 			]}
 		/>
 		<slot />
-		<script src="/taos.min.js" is:inline defer></script>
+		<script src={`${BASE_URL}/taos.min.js`} is:inline defer></script>
 	</body>
 </html>
 

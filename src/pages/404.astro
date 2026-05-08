@@ -2,6 +2,7 @@
 import HoverButton from "../components/HoverButton.astro";
 import { defaultLang } from "../i18n/ui";
 import { useTranslations } from "../i18n/utils";
+import { BASE_URL } from "../utils/constants";
 import Layout from "../layouts/Layout.astro";
 
 const localeToUse = Astro.preferredLocale || Astro.currentLocale || defaultLang;
@@ -45,7 +46,7 @@ const t = useTranslations(localeToUse);
         }
       </div>
       <HoverButton
-        href="/"
+        href={`${BASE_URL}/`}
         target="_self"
         classStyles="bg-blue-600 bg-opacity-10 max-w-2xl mx-auto py-4"
       >

@@ -20,6 +20,12 @@ pnpm astro check    # type-check Astro files
 
 There is no test suite, no linter, and no formatter wired up — don't invent commands for them.
 
+## Commits
+
+Use [Conventional Commits](https://www.conventionalcommits.org/) — concise, lowercase, no trailing period. Format: `type(scope): subject`. Common types in this repo: `feat`, `fix`, `perf`, `chore`, `docs`, `refactor`. Split unrelated changes into separate commits.
+
+**Subject line only by default — no body, no bullet list, no "why" paragraph.** The diff and the subject together should already explain the change. Only add a body when the change references something the diff cannot show (e.g. a specific incident, a constraint imposed elsewhere, a non-obvious tradeoff). If you find yourself restating what the diff shows, delete the body. Keep the subject under ~70 characters.
+
 ## Architecture
 
 ### i18n is the spine of the routing
@@ -40,11 +46,11 @@ PDFs in `public/cvs/` are blocked from indexing via `astro-robots-txt`. Only `EN
 
 ### Scroll animations via `taos`
 
-The `taos` library drives most scroll-in animations (the `taos:translate-x-[...] taos:opacity-0` classes). Two non-obvious pieces:
+The `taos` library drives most scroll-in animations (the `taos:translate-x-[...] taos:opacity-0` classes). A few non-obvious pieces:
 
-- `tailwind.config.mjs` strips the `taos:` prefix from scanned content (`transform: (content) => content.replace(/taos:/g, '')`) so Tailwind generates the underlying utility classes.
-- `safelist` keeps `!duration-[0ms]`, `!delay-[0ms]`, and the `:where([class*="taos:"]:not(.taos-init))` selector alive.
-- `<script src="/taos.min.js" is:inline defer>` is loaded from `Layout.astro`. The file lives in `public/`, not as a dependency.
+- `tailwind.config.mjs` (loaded by `src/styles/global.css` via `@config`) strips the `taos:` prefix from scanned content (`transform: (content) => content.replace(/taos:/g, '')`) so Tailwind generates the underlying utility classes, and registers `taos/plugin` which adds the `taos:` variant and the base `html.js :where([class*="taos:"]:not(.taos-init))` rule.
+- `src/styles/global.css` keeps `!duration-[0ms]` and `!delay-[0ms]` alive via `@source inline(...)` (Tailwind v4's safelist replacement).
+- `<script src="/taos.min.js" is:inline defer>` is loaded from `Layout.astro`. The file lives in `public/`, copied from `node_modules/taos/dist/taos.js` — bump it manually when upgrading taos.
 
 Removing or reorganizing those config bits will silently break animations across the site.
 
@@ -52,14 +58,15 @@ Removing or reorganizing those config bits will silently break animations across
 
 `src/components/BlurImage.astro` is the standard `<img>` wrapper. It expects every image to have a `*-small.webp` companion in `public/` (e.g. `profile-pic.webp` ↔ `public/profile-pic-small.webp`) used as a CSS `background-image` placeholder while the full image loads. When adding new images to `src/images/`, generate the corresponding small placeholder in `public/` or `BlurImage` will fail at the regex match.
 
-`astro.config.mjs` uses `passthroughImageService` — Astro does not re-encode images at build time, so dimensions/format are whatever you commit.
+Astro uses its default sharp image service — images in `src/images/` are compressed at build time. Images in `public/` (small placeholders) are not processed. When adding new images to `src/images/`, commit the original high-quality file and let sharp handle compression.
 
 ### Component conventions
 
 - Astro components only. Interactivity lives in inline `<script>` blocks at the bottom of each component (e.g. `Header.astro`, `ImageComparisonSlider.astro`, `Technologies.astro`).
 - Section anchors used by the nav: `#about-me`, `#experience`, `#technologies` — keep these IDs stable.
 - Job entries are composed: `Experience.astro` → `DoubleImageExperienceContainer` → `BaseJobExperienceContainer` + `ImageComparisonSlider` + `ExperienceCard`. The `right={true|false}` prop flips layout direction and animation origin.
-- Tailwind theme defines a deliberate `blue` / `gray` / `slate` palette in `tailwind.config.mjs` — prefer those tokens over arbitrary hex values to keep the design consistent.
+- Tailwind v4 is wired via `@tailwindcss/vite` (in `astro.config.mjs`) plus `src/styles/global.css` imported from `Layout.astro`. The custom `blue` / `gray` / `slate` palette, `font-sans` (Inter variable), and `blob` / `background-scroll` animations live in `global.css` under `@theme` — prefer those tokens over arbitrary hex values to keep the design consistent.
+- `tailwind.config.mjs` is reduced to the legacy bridge (content paths + `transform` + `taos` plugin) and is loaded via `@config` in `global.css`. Theme tokens belong in CSS, not the JS config.
 
 ## Skills
 
