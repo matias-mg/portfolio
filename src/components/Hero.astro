@@ -12,14 +12,8 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const buildCVLanguageFlag = () => {
-    if (lang === "pt")
-        return "es" // PT CV fallback
-    return lang
-};
-
-const CV_DOWNLOAD_URL = `/cvs/matias-medina-cv-${buildCVLanguageFlag().toUpperCase()}.pdf`
-const CV_DOWNLOAD_FILENAME = `[${lang.toUpperCase()}] CV Matias Medina.pdf`
+const CV_DOWNLOAD_URL = `/cvs/matias-medina-cv.pdf`
+const CV_DOWNLOAD_FILENAME = `CV Matias Medina.pdf`
 ---
 
 <section
