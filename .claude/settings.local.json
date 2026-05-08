@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pnpm install *)",
+      "PowerShell(pnpm astro *)"
+    ]
+  }
+}
