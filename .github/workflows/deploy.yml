@@ -39,12 +39,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Patch config for static output
-        run: |
-          sed -i "s|output: 'server'|output: 'static'|g" astro.config.mjs
-          sed -i "/import vercel/d" astro.config.mjs
-          sed -i "/adapter: vercel/,/}),$/d" astro.config.mjs
-
       - name: Build with Astro
         run: pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
 

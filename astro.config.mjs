@@ -1,7 +1,6 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import vercel from '@astrojs/vercel/serverless';
 import robotsTxt from 'astro-robots-txt';
 import { defaultLang } from './src/i18n/ui';
 
@@ -30,8 +29,5 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "es", "pt"],
   },
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: { enabled: true }
-  }),
+  output: 'static',
 });
