@@ -24,6 +24,8 @@ There is no test suite, no linter, and no formatter wired up — don't invent co
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) — concise, lowercase, no trailing period. Format: `type(scope): subject`. Common types in this repo: `feat`, `fix`, `perf`, `chore`, `docs`, `refactor`. Split unrelated changes into separate commits.
 
+**Subject line only by default — no body, no bullet list, no "why" paragraph.** The diff and the subject together should already explain the change. Only add a body when the change references something the diff cannot show (e.g. a specific incident, a constraint imposed elsewhere, a non-obvious tradeoff). If you find yourself restating what the diff shows, delete the body. Keep the subject under ~70 characters.
+
 ## Architecture
 
 ### i18n is the spine of the routing
