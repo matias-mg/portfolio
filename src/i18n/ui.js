@@ -22,7 +22,7 @@ export const ui = {
         // Hero translations
         "hero.headline": "UX/UI React Developer",
         "hero.badge": "Open to Work",
-        "hero.description": "Hello! I’m a frontend developer with 5+ years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
+        "hero.description": "Hello! I'm a frontend developer with 5+ years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
         "hero.download-button": "Download CV",
         // Experience translations
         "experience.prefix": "Summary of my",
@@ -81,7 +81,7 @@ export const ui = {
                 name: "React Testing Library",
                 subtitle: "Simple and complete testing utilities",
                 description:
-                    "Focused on testing React components from a user’s perspective, this library promotes best practices by encouraging testing of the actual behavior of your application.",
+                    "Focused on testing React components from a user's perspective, this library promotes best practices by encouraging testing of the actual behavior of your application.",
             },
         ],
         // Footer translations
