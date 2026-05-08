@@ -1,6 +1,7 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
 import "@fontsource-variable/inter";
+import "../styles/global.css";
 import { getLangFromUrl, getLocalizedUrl } from "../i18n/utils";
 import { languages } from "../i18n/ui";
 import { SITE_URL } from "../utils/constants";
@@ -9,9 +10,9 @@ const { title, description, blockCanonical = false } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const transformedSiteURL = `${SITE_URL}${getLocalizedUrl(lang)}`;
-const languageAlternates = Object.keys(languages).map((hrefLang) => ({
-	hrefLang,
-	href: `${SITE_URL}${getLocalizedUrl(hrefLang)}`,
+const languageAlternates = Object.keys(languages).map((hreflang) => ({
+	hreflang,
+	href: `${SITE_URL}${getLocalizedUrl(hreflang)}`,
 }));
 ---
 

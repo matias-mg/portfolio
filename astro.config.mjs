@@ -1,5 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from 'astro-robots-txt';
 import { defaultLang } from './src/i18n/ui';
@@ -7,7 +7,10 @@ import { defaultLang } from './src/i18n/ui';
 // https://astro.build/config
 export default defineConfig({
   site: "https://matias-mg.github.io/portfolio/",
-  integrations: [tailwind(), robotsTxt({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [robotsTxt({
     policy: [
       {
         userAgent: '*',
@@ -30,4 +33,7 @@ export default defineConfig({
     locales: ["en", "es", "pt"],
   },
   output: 'static',
+  image: {
+    service: passthroughImageService(),
+  },
 });

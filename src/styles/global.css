@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.mjs";
+
+@theme {
+  --font-sans: "Inter variable", sans-serif;
+
+  --color-blue-50: #E7F1F3;
+  --color-blue-100: #E6EDF3;
+  --color-blue-300: #B0C7CB;
+  --color-blue-600: #33A0B3;
+  --color-blue-950: #142733;
+
+  --color-gray-500: #868F91;
+  --color-gray-600: #868F91;
+
+  --color-slate-900: #121718;
+
+  --animate-blob: blob 6s infinite;
+  --animate-background-scroll: background-scroll 3s linear infinite;
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    33% {
+      transform: translate(90px, -50px);
+    }
+    66% {
+      transform: translate(-20px, 20px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes background-scroll {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@source inline("!duration-[0ms]");
+@source inline("!delay-[0ms]");
