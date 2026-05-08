@@ -6,7 +6,7 @@ import { defaultLang } from './src/i18n/ui';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://matiasm.com",
+  site: "https://matias-mg.github.io/portfolio/",
   integrations: [tailwind(), robotsTxt({
     policy: [
       {

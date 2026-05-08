@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, staging ]
   workflow_dispatch:
 
 permissions:
@@ -20,6 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Checkout main branch (staging only)
+        if: github.ref_name == 'staging'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: .main
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -39,8 +46,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build with Astro
-        run: pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
+      - name: Build
+        run: |
+          if [ "$GITHUB_REF_NAME" = "staging" ]; then
+            pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}/staging"
+            mv dist staging-dist
+            cd .main && pnpm install && pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}" && cd ..
+            mv .main/dist dist
+            mkdir -p dist/staging
+            cp -r staging-dist/. dist/staging/
+          else
+            pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
