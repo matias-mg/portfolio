@@ -20,6 +20,10 @@ pnpm astro check    # type-check Astro files
 
 There is no test suite, no linter, and no formatter wired up — don't invent commands for them.
 
+## Commits
+
+Use [Conventional Commits](https://www.conventionalcommits.org/) — concise, lowercase, no trailing period. Format: `type(scope): subject`. Common types in this repo: `feat`, `fix`, `perf`, `chore`, `docs`, `refactor`. Split unrelated changes into separate commits.
+
 ## Architecture
 
 ### i18n is the spine of the routing
