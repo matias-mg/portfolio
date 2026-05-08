@@ -25,6 +25,9 @@ const languageAlternates = Object.keys(languages).map((hreflang) => ({
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" href={`${BASE_URL}/favicon.ico`} sizes="any" />
 		<link rel="sitemap" href={`${BASE_URL}/sitemap-index.xml`} />
+		<script is:inline>
+			document.documentElement.classList.add("js");
+		</script>
 	</head>
 	<body>
 		<AstroSeo
