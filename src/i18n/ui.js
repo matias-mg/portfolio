@@ -10,7 +10,7 @@ export const ui = {
     en: {
         // Site translations
         "site.title": "Matías Medina - React Web Developer and frontend expert",
-        "site.description": "Matías Medina, specialized on web development with 4 years of experience in React and team leadership skills.",
+        "site.description": "Matías Medina, specialized on web development with 5+ years of experience in React and team leadership skills.",
         "site.404-title": "Matías Medina - Page not found",
         "site.404-description": "This route has not been found.",
         // Header translations
@@ -22,7 +22,7 @@ export const ui = {
         // Hero translations
         "hero.headline": "UX/UI React Developer",
         "hero.badge": "Open to Work",
-        "hero.description": "Hello! I’m a frontend developer with 4 years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
+        "hero.description": "Hello! I’m a frontend developer with 5+ years of experience in React and team leadership skills. I create intuitive and efficient UI, with a focus on continuous improvement and team collaboration.",
         "hero.download-button": "Download CV",
         // Experience translations
         "experience.prefix": "Summary of my",
@@ -99,7 +99,7 @@ export const ui = {
     es: {
         // Site translations
         "site.title": "Matías Medina - Desarrollador Web React y experto en frontend",
-        "site.description": "Matías Medina, especializado en desarrollo web con 4 años de experiencia en React y habilidades de liderazgo de equipo.",
+        "site.description": "Matías Medina, especializado en desarrollo web con 5+ años de experiencia en React y habilidades de liderazgo de equipo.",
         "site.404-title": "Matías Medina - Página no encontrada",
         "site.404-description": "Esta ruta no ha sido encontrada.",
         // Header translations
@@ -111,7 +111,7 @@ export const ui = {
         // Hero translations
         "hero.headline": "Desarrollador React UX/UI",
         "hero.badge": "Disponible para trabajar",
-        "hero.description": "¡Hola! Soy un desarrollador frontend con 4 años de experiencia en React y habilidades de liderazgo de equipo. Creo interfaces intuitivas y eficientes. Me enfoco en la mejora continua y la colaboración en equipo.",
+        "hero.description": "¡Hola! Soy un desarrollador frontend con 5+ años de experiencia en React y habilidades de liderazgo de equipo. Creo interfaces intuitivas y eficientes. Me enfoco en la mejora continua y la colaboración en equipo.",
         "hero.download-button": "Descargar CV",
         // Experience translations
         "experience.prefix": "Resumen de mi",
@@ -188,7 +188,7 @@ export const ui = {
     pt: {
         // Site translations
         "site.title": "Matías Medina - Desenvolvedor Web React e especialista em frontend",
-        "site.description": "Matías Medina, especializado em desenvolvimento web com 4 anos de experiência em React e habilidades de liderança de equipe.",
+        "site.description": "Matías Medina, especializado em desenvolvimento web com 5+ anos de experiência em React e habilidades de liderança de equipe.",
         "site.404-title": "Matías Medina | Página não encontrada",
         "site.404-description": "Esta rota não foi encontrada.",
         // Header translations
@@ -200,7 +200,7 @@ export const ui = {
         // Hero translations
         "hero.headline": "Desenvolvedor UX/UI React",
         "hero.badge": "Disponível para trabalhar",
-        "hero.description": "Olá! Sou um desenvolvedor frontend com 4 anos de experiência em React e habilidades de liderança de equipe. Crio interfaces intuitivas e eficientes, com foco na melhoria contínua e na colaboração em equipe.",
+        "hero.description": "Olá! Sou um desenvolvedor frontend com 5+ anos de experiência em React e habilidades de liderança de equipe. Crio interfaces intuitivas e eficientes, com foco na melhoria contínua e na colaboração em equipe.",
         "hero.download-button": "Baixar CV",
         // Experience translations
         "experience.prefix": "Resumo da minha",
