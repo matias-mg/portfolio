@@ -8,11 +8,12 @@ import BlurImage from "./BlurImage.astro";
 import ProfilePic from "../images/profile-pic.webp";
 import EmailIcon from "./icons/EmailIcon.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { BASE_URL } from "../utils/constants";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const CV_DOWNLOAD_URL = `/cvs/matias-medina-cv.pdf`
+const CV_DOWNLOAD_URL = `${BASE_URL}/cvs/matias-medina-cv.pdf`
 const CV_DOWNLOAD_FILENAME = `CV Matias Medina.pdf`
 ---
 
