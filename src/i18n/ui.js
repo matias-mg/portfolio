@@ -9,9 +9,9 @@ export const defaultLang = "en";
 export const ui = {
     en: {
         // Site translations
-        "site.title": "Matías Medina - React Web Developer and frontend expert",
-        "site.description": "Matías Medina, specialized on web development with 5+ years of experience in React and team leadership skills.",
-        "site.404-title": "Matías Medina - Page not found",
+        "site.title": "Matias Medina - React Web Developer and frontend expert",
+        "site.description": "Matias Medina, specialized on web development with 5+ years of experience in React and team leadership skills.",
+        "site.404-title": "Matias Medina - Page not found",
         "site.404-description": "This route has not been found.",
         // Header translations
         "header.about-me": "About me",
@@ -89,7 +89,7 @@ export const ui = {
         "footer.figma-title": "Pixel-Perfect Development",
         "footer.figma-description": "Curious about the design process? Compare this site with its Figma design to see how closely the final product aligns with pixel-perfect precision.",
         "footer.figma-button-text": "View Figma Design",
-        "footer.copyright": "Designed & Developed by Matías Medina.",
+        "footer.copyright": "Designed & Developed by Matias Medina.",
         "footer.built-with": "Built with Astro, Vanilla JS and Tailwind CSS.",
         // 404 page translations
         "404.title": "Page Not Found",
@@ -98,9 +98,9 @@ export const ui = {
     },
     es: {
         // Site translations
-        "site.title": "Matías Medina - Desarrollador Web React y experto en frontend",
-        "site.description": "Matías Medina, especializado en desarrollo web con 5+ años de experiencia en React y habilidades de liderazgo de equipo.",
-        "site.404-title": "Matías Medina - Página no encontrada",
+        "site.title": "Matias Medina - Desarrollador Web React y experto en frontend",
+        "site.description": "Matias Medina, especializado en desarrollo web con 5+ años de experiencia en React y habilidades de liderazgo de equipo.",
+        "site.404-title": "Matias Medina - Página no encontrada",
         "site.404-description": "Esta ruta no ha sido encontrada.",
         // Header translations
         "header.about-me": "Sobre mí",
@@ -178,7 +178,7 @@ export const ui = {
         "footer.figma-title": 'Desarrollo Pixel-Perfect',
         "footer.figma-description": "¿Curioso sobre el proceso de diseño? Compara este sitio con su diseño en Figma para ver lo cerca que se alinea el producto final con la precisión pixel-perfect del diseño.",
         "footer.figma-button-text": "Ver diseño en Figma",
-        "footer.copyright": "Diseñado y desarrollado por Matías Medina.",
+        "footer.copyright": "Diseñado y desarrollado por Matias Medina.",
         "footer.built-with": "Construído con Astro, Vanilla JS y Tailwind CSS.",
         // 404 page translations
         "404.title": "Página no encontrada",
@@ -187,9 +187,9 @@ export const ui = {
     },
     pt: {
         // Site translations
-        "site.title": "Matías Medina - Desenvolvedor Web React e especialista em frontend",
-        "site.description": "Matías Medina, especializado em desenvolvimento web com 5+ anos de experiência em React e habilidades de liderança de equipe.",
-        "site.404-title": "Matías Medina | Página não encontrada",
+        "site.title": "Matias Medina - Desenvolvedor Web React e especialista em frontend",
+        "site.description": "Matias Medina, especializado em desenvolvimento web com 5+ anos de experiência em React e habilidades de liderança de equipe.",
+        "site.404-title": "Matias Medina | Página não encontrada",
         "site.404-description": "Esta rota não foi encontrada.",
         // Header translations
         "header.about-me": "Sobre mim",
@@ -267,7 +267,7 @@ export const ui = {
         "footer.figma-title": "Desenvolvimento Pixel-Perfect",
         "footer.figma-description": "Curioso sobre o processo de design? Compare este site com seu design no Figma para ver quão alinhado está o produto final com a precisão pixel-perfect.",
         "footer.figma-button-text": "Ver design no Figma",
-        "footer.copyright": "Projetado & Desenvolvido por Matías Medina.",
+        "footer.copyright": "Projetado & Desenvolvido por Matias Medina.",
         "footer.built-with": "Construído com Astro, Vanilla JS e Tailwind CSS.",
         // 404 page translations
         "404.title": "Página Não Encontrada",

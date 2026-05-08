@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Personal portfolio site for Matías Medina, built as a static Astro 4 site. Deployed to GitHub Pages from `main` via `.github/workflows/deploy.yml`. Production URL: `https://matias-mg.github.io/portfolio/`.
+Personal portfolio site for Matias Medina, built as a static Astro 4 site. Deployed to GitHub Pages from `main` via `.github/workflows/deploy.yml`. Production URL: `https://matias-mg.github.io/portfolio/`.
 
 Stack: Astro + Tailwind CSS + vanilla TypeScript/JS in `<script>` blocks (no React/Vue). pnpm is the package manager (see workflow), though `package.json` scripts call `astro` directly.
 
