@@ -8,6 +8,7 @@ const FIGMA_LINK =
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <footer
@@ -81,7 +82,7 @@ const t = useTranslations(lang);
       class="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-blue-600 m-auto w-fit leading-none"
     >
       <img
-        src="/icons/github-icon.svg"
+        src={`${base}/icons/github-icon.svg`}
         alt="github logo"
         loading="lazy"
         class="size-6"
