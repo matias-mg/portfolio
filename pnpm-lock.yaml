@@ -11,9 +11,6 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.7.2
         version: 3.7.2
-      '@astrolib/seo':
-        specifier: 1.0.0-beta.8
-        version: 1.0.0-beta.8(astro@6.3.1(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4))
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -88,11 +85,6 @@ packages:
 
   '@astrojs/yaml2ts@0.2.3':
     resolution: {integrity: sha512-PJzRmgQzUxI2uwpdX2lXSHtP4G8ocp24/t+bZyf5Fy0SZLSF9f9KXZoMlFM/XCGue+B0nH/2IZ7FpBYQATBsCg==}
-
-  '@astrolib/seo@1.0.0-beta.8':
-    resolution: {integrity: sha512-SpNycspjcjnz6um4Vph0k+SAKgUib7/8qJRCaaahJD1UfLuXKK7E+bmKbnv8QPBTRPZkQW6zFVaZRl5VvnyDfg==}
-    peerDependencies:
-      astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0 || ^5.0.0
 
   '@babel/helper-string-parser@7.27.1':
     resolution: {integrity: sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==}
@@ -2128,10 +2120,6 @@ snapshots:
   '@astrojs/yaml2ts@0.2.3':
     dependencies:
       yaml: 2.8.4
-
-  '@astrolib/seo@1.0.0-beta.8(astro@6.3.1(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4))':
-    dependencies:
-      astro: 6.3.1(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4)
 
   '@babel/helper-string-parser@7.27.1': {}
 

@@ -10,9 +10,11 @@ export const ui = {
     en: {
         // Site translations
         "site.title": "Matias Medina - React Web Developer and frontend expert",
-        "site.description": "Matias Medina, specialized on web development with 5+ years of experience in React and team leadership skills.",
+        "site.description": "Matias Medina — Frontend Engineer with 5+ years in React, available for remote work with US/Canada teams. Specialized in scalable, user-centric UI.",
         "site.404-title": "Matias Medina - Page not found",
         "site.404-description": "This route has not been found.",
+        "seo.og-image-alt": "Portrait of Matias Medina, Frontend Engineer.",
+        "seo.job-title": "Frontend Engineer",
         // Header translations
         "header.about-me": "About me",
         "header.experience": "Experience",
@@ -102,6 +104,8 @@ export const ui = {
         "site.description": "Matias Medina, especializado en desarrollo web con 5+ años de experiencia en React y habilidades de liderazgo de equipo.",
         "site.404-title": "Matias Medina - Página no encontrada",
         "site.404-description": "Esta ruta no ha sido encontrada.",
+        "seo.og-image-alt": "Retrato de Matias Medina, Ingeniero Frontend.",
+        "seo.job-title": "Ingeniero Frontend",
         // Header translations
         "header.about-me": "Sobre mí",
         "header.experience": "Experiencia",
@@ -191,6 +195,8 @@ export const ui = {
         "site.description": "Matias Medina, especializado em desenvolvimento web com 5+ anos de experiência em React e habilidades de liderança de equipe.",
         "site.404-title": "Matias Medina | Página não encontrada",
         "site.404-description": "Esta rota não foi encontrada.",
+        "seo.og-image-alt": "Retrato de Matias Medina, Engenheiro Frontend.",
+        "seo.job-title": "Engenheiro Frontend",
         // Header translations
         "header.about-me": "Sobre mim",
         "header.experience": "Experiência",

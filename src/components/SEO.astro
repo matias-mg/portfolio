@@ -1,0 +1,137 @@
+---
+import { getImage } from "astro:assets";
+import ProfilePic from "../images/profile-pic.webp";
+import { getLangFromUrl, useTranslations, getLocalizedUrl } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+import { BASE_URL, SITE_URL } from "../utils/constants";
+
+interface Props {
+	title: string;
+	description: string;
+	blockCanonical?: boolean;
+}
+
+const { title, description, blockCanonical = false } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const transformedSiteURL = `${SITE_URL}${getLocalizedUrl(lang)}`;
+
+const ogImage = await getImage({
+	src: ProfilePic,
+	width: 1200,
+	height: 630,
+	format: "png",
+	fit: "cover",
+	position: "attention",
+	quality: 85,
+});
+const ogImageURL = new URL(ogImage.src, `${SITE_URL}/`).href;
+
+const ogImageAlt = t("seo.og-image-alt");
+const jobTitle = t("seo.job-title");
+
+const languageAlternates = Object.keys(languages).map((hreflang) => ({
+	hreflang,
+	href: `${SITE_URL}${getLocalizedUrl(hreflang)}`,
+}));
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": `${SITE_URL}/#person`,
+			name: "Matias Medina",
+			alternateName: ["Matías Medina"],
+			givenName: "Matias",
+			familyName: "Medina",
+			url: `${SITE_URL}/`,
+			image: ogImageURL,
+			jobTitle,
+			description: t("site.description"),
+			email: "mailto:matiasmg.dev@gmail.com",
+			knowsLanguage: ["en", "es", "pt"],
+			knowsAbout: [
+				"React",
+				"Next.js",
+				"GraphQL",
+				"Tailwind CSS",
+				"TypeScript",
+				"Storybook",
+				"Jest",
+				"React Testing Library",
+				"Frontend Engineering",
+				"User Interface Design",
+			],
+			address: { "@type": "PostalAddress", addressCountry: "CL" },
+			nationality: { "@type": "Country", name: "Chile" },
+			hasOccupation: {
+				"@type": "Occupation",
+				name: "Frontend Engineer",
+				skills: "React, Next.js, TypeScript, GraphQL, Tailwind CSS",
+				occupationLocation: { "@type": "Country", name: "Chile" },
+			},
+			sameAs: [
+				"https://www.linkedin.com/in/matiasmg/",
+				"https://github.com/matias-mg",
+			],
+		},
+		{
+			"@type": "WebSite",
+			"@id": `${SITE_URL}/#website`,
+			url: transformedSiteURL,
+			name: "Matias Medina",
+			description: t("site.description"),
+			inLanguage: lang,
+			author: { "@id": `${SITE_URL}/#person` },
+			publisher: { "@id": `${SITE_URL}/#person` },
+		},
+	],
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content="Matias Medina" />
+<meta name="robots" content={blockCanonical ? "noindex,nofollow" : "index,follow"} />
+<meta name="theme-color" content="#33A0B3" />
+<meta name="color-scheme" content="dark" />
+<meta name="application-name" content="Matias Medina" />
+
+{!blockCanonical && <link rel="canonical" href={transformedSiteURL} />}
+{languageAlternates.map(({ hreflang, href }) => (
+	<link rel="alternate" hreflang={hreflang} href={href} />
+))}
+<link rel="alternate" hreflang="x-default" href={`${SITE_URL}/`} />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Matias Medina" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={transformedSiteURL} />
+<meta property="og:locale" content={lang} />
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:profile:first_name" content="Matias" />
+<meta property="og:profile:last_name" content="Medina" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<link rel="icon" href={`${BASE_URL}/favicon.ico`} sizes="any" />
+<link rel="icon" href={`${BASE_URL}/favicon.svg`} type="image/svg+xml" />
+<link rel="apple-touch-icon" href={`${BASE_URL}/apple-touch-icon.png`} />
+<link rel="manifest" href={`${BASE_URL}/manifest.webmanifest`} />
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

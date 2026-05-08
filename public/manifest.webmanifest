@@ -1,0 +1,16 @@
+{
+  "name": "Matias Medina",
+  "short_name": "Matias Medina",
+  "description": "Matias Medina — Frontend Engineer with 5+ years in React, available for remote work with US/Canada teams.",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "minimal-ui",
+  "background_color": "#040c0d",
+  "theme_color": "#33A0B3",
+  "icons": [
+    { "src": "/portfolio/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/portfolio/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/portfolio/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/portfolio/android-chrome-512x512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
