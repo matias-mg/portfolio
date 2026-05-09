@@ -134,19 +134,19 @@ export const ui = {
         "experience.title": "Experiencia profesional",
         "experience.floqast-job-title": "Ingeniero Frontend",
         "experience.floqast-job-achievements": [
-            "Construí y escalé componentes React para una arquitectura de micro-frontends, que da soporte a más de 3.000 clientes enterprise (p. ej., Zoom, Snowflake).",
-            "Integré agentes de IA (Cursor, Claude Code) con context engineering y flujos de trabajo personalizados para enviar funcionalidades a producción ~2,5x más rápido, automatizando la generación de tests de extremo a extremo.",
+            "Construí y escalé componentes React para una arquitectura de micro-frontends que da soporte a más de 3.000 clientes enterprise (ej.: Zoom, Snowflake).",
+            "Integré agentes IA (Cursor, Claude Code) con context engineering y flujos de trabajo personalizados para enviar funcionalidades a producción ~2,5x más rápido, incluyendo la generación de tests automatizados.",
             "Amplié el design system Flo-UI con más de 25 componentes React reutilizables usando patrones de Compound Components y Custom Hooks en Storybook, eliminando incidencias de regresión en 14 squads consumidores.",
         ],
         "experience.kandui-job-title": "Líder de equipo React UI/UX",
         "experience.kandui-job-achievements": [
             "Lideré el equipo frontend de 5 ingenieros en una startup FinTech, definiendo el roadmap técnico para construir aplicaciones web de inversión desde cero.",
-            "Mentoreé a ingenieros junior e impuse revisiones de código estrictas, mejorando la velocidad de entrega del equipo.",
+            "Fui mentor de ingenieros junior y lideraba revisiones de código estrictas, mejorando la velocidad de entrega del equipo.",
         ],
         "experience.rg-corp-job-title": "Desarrollador web React",
         "experience.rg-corp-job-achievements": [
-            "Desarrollé formularios de onboarding KYC accesibles (a11y) con React y TypeScript, aumentando la tasa de finalización del 56 % hasta ~97 %.",
-            "Refactoricé más de 80 componentes React legacy basados en clases a componentes funcionales y Custom Hooks, resolviendo cuellos de botella críticos de renderizado.",
+            "Desarrollé formularios de onboarding KYC accesibles (a11y) con React y TypeScript, aumentando la tasa de finalización del 56 % hasta un ~97%.",
+            "Refactoricé +80 componentes React legacy basados en clases a componentes funcionales y Custom Hooks, resolviendo cuellos de botella críticos de renderizado.",
         ],
         // Technologies translations
         "technologies.prefix": "Algunas de mis",
@@ -154,7 +154,7 @@ export const ui = {
         "technologies.list": [
             {
                 name: "React",
-                subtitle: "La biblioteca para interfaces de usuario web y nativas",
+                subtitle: "Biblioteca UI para usuario web y nativas",
                 description:
                     "Una biblioteca ampliamente adoptada y mantenida por Meta, facilita la creación de interfaces de usuario interactivas, actualizando y renderizando de manera eficiente solo los componentes necesarios cuando los datos cambian.",
             },
