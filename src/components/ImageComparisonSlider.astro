@@ -105,9 +105,12 @@ const {
   @keyframes bounce {
     0%,
     100% {
+      transform: translateX(-50%);
+    }
+    25% {
       transform: translateX(calc(-50% - 10px));
     }
-    50% {
+    75% {
       transform: translateX(calc(-50% + 10px));
     }
   }
@@ -151,22 +154,23 @@ const {
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var containers = document.querySelectorAll('.image-comparison');
+    const containers = document.querySelectorAll('.image-comparison');
 
     containers.forEach(function (container: HTMLElement) {
-      var handle = container.querySelector('.slider-handle') as HTMLElement;
-      var rightImage = container.querySelector('.image-right') as HTMLElement;
-      var isDragging = false;
-      var animationRemoved = false;
-      var lastPosition = 50;
-      var lastX = 0;
+      const handle = container.querySelector('.slider-handle') as HTMLElement;
+      const rightImage = container.querySelector('.image-right') as HTMLElement;
+      let isDragging = false;
+      let animationRemoved = false;
+      let lastPosition = 50;
+      let lastX = 0;
+      let restoreTimer: ReturnType<typeof setTimeout> | null = null;
 
       function getPercentage(pixelValue) {
         return (pixelValue / container.offsetWidth) * 100;
       }
 
       function updateSliderPosition(x) {
-        var percentage = Math.max(0, Math.min(100, getPercentage(x)));
+        const percentage = Math.max(0, Math.min(100, getPercentage(x)));
         handle.style.left = percentage + '%';
         handle.style.transform = 'translateX(-50%)';
         rightImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
@@ -175,19 +179,48 @@ const {
 
       function handleDragStart(e) {
         isDragging = true;
+        cancelRestore();
         removeAnimation();
         container.style.cursor = 'grabbing';
         e.preventDefault();
       }
 
       function handleDragEnd() {
+        if (!isDragging) return;
         isDragging = false;
         container.style.cursor = 'default';
+        scheduleRestore();
+      }
+
+      function scheduleRestore() {
+        cancelRestore();
+        restoreTimer = setTimeout(restoreAnimation, 1500);
+      }
+
+      function cancelRestore() {
+        if (restoreTimer !== null) {
+          clearTimeout(restoreTimer);
+          restoreTimer = null;
+        }
+      }
+
+      function restoreAnimation() {
+        cancelRestore();
+        if (!animationRemoved || isDragging) return;
+        handle.style.animation = '';
+        handle.style.transform = '';
+        animationRemoved = false;
+        requestAnimationFrame(updateClipPath);
+      }
+
+      function handleMouseLeave() {
+        if (isDragging) return;
+        scheduleRestore();
       }
 
       function handleDragMove(e) {
         if (!isDragging) return;
-        var clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
         if (clientX) {
           lastX = clientX - container.getBoundingClientRect().left;
           requestAnimationFrame(updatePosition);
@@ -202,6 +235,7 @@ const {
       }
 
       function removeAnimation() {
+        cancelRestore();
         if (!animationRemoved) {
           handle.style.animation = 'none';
           handle.style.left = `${lastPosition}%`;
@@ -213,9 +247,9 @@ const {
 
       function updateClipPath() {
         if (!animationRemoved) {
-          var rect = container.getBoundingClientRect();
-          var handleRect = handle.getBoundingClientRect();
-          var percentage =
+          const rect = container.getBoundingClientRect();
+          const handleRect = handle.getBoundingClientRect();
+          const percentage =
             ((handleRect.left + handleRect.width / 2 - rect.left) /
               rect.width) *
             100;
@@ -239,6 +273,7 @@ const {
       document.addEventListener('touchend', handleDragEnd);
 
       container.addEventListener('mouseover', removeAnimation);
+      container.addEventListener('mouseleave', handleMouseLeave);
 
       // Start the animation update loop
       requestAnimationFrame(updateClipPath);
