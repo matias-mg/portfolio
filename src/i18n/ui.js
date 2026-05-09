@@ -31,7 +31,7 @@ export const ui = {
         "experience.title": "Professional Experience",
         "experience.floqast-job-title": "Frontend Engineer",
         "experience.floqast-job-achievements": [
-            "Built and scaled React components for a micro-frontend architecture (single-spa) supporting 3,000+ Enterprise clients (e.g., Zoom, Snowflake).",
+            "Built and scaled React components for a micro-frontend architecture, supporting 3,000+ Enterprise clients (e.g., Zoom, Snowflake).",
             "Integrated AI agents (Cursor, Claude Code) with custom context engineering and workflows to ship production features ~2.5x faster, automating test generation end-to-end.",
             "Expanded the Flo-UI design system with 25+ reusable React components using Compound Components and Custom Hooks patterns in Storybook, eliminating regression incidents across 14 consuming squads.",
         ],
@@ -134,7 +134,7 @@ export const ui = {
         "experience.title": "Experiencia profesional",
         "experience.floqast-job-title": "Ingeniero Frontend",
         "experience.floqast-job-achievements": [
-            "Construí y escalé componentes React para una arquitectura de micro-frontends (single-spa) que da soporte a más de 3.000 clientes enterprise (p. ej., Zoom, Snowflake).",
+            "Construí y escalé componentes React para una arquitectura de micro-frontends, que da soporte a más de 3.000 clientes enterprise (p. ej., Zoom, Snowflake).",
             "Integré agentes de IA (Cursor, Claude Code) con context engineering y flujos de trabajo personalizados para enviar funcionalidades a producción ~2,5x más rápido, automatizando la generación de tests de extremo a extremo.",
             "Amplié el design system Flo-UI con más de 25 componentes React reutilizables usando patrones de Compound Components y Custom Hooks en Storybook, eliminando incidencias de regresión en 14 squads consumidores.",
         ],
@@ -237,7 +237,7 @@ export const ui = {
         "experience.title": "Experiência Profissional",
         "experience.floqast-job-title": "Engenheiro Frontend",
         "experience.floqast-job-achievements": [
-            "Construí e escalei componentes React para uma arquitetura de micro-frontends (single-spa) que dá suporte a mais de 3.000 clientes enterprise (ex.: Zoom, Snowflake).",
+            "Construí e escalei componentes React para uma arquitetura de micro-frontends que dá suporte a mais de 3.000 clientes enterprise (ex.: Zoom, Snowflake).",
             "Integrei agentes de IA (Cursor, Claude Code) com context engineering e fluxos de trabalho personalizados para entregar funcionalidades em produção ~2,5x mais rápido, automatizando a geração de testes de ponta a ponta.",
             "Expandi o design system Flo-UI com mais de 25 componentes React reutilizáveis usando padrões de Compound Components e Custom Hooks no Storybook, eliminando incidentes de regressão em 14 squads consumidores.",
         ],
