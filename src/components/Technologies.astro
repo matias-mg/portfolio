@@ -122,6 +122,7 @@ const TECH_LIST = [
         </div>
     </div>
     <div
+        id="tech-info-container"
         class="flex flex-col gap-4 items-center p-0 bg-slate-900 mt-4 rounded-3xl border border-blue-600/20 sm:gap-6 sm:text-left sm:flex-row sm:items-center delay-[600ms] duration-[1000ms] taos:translate-y-[-50px] taos:opacity-0 [animation-iteration-count:infinite]"
         data-taos-offset="250"
     >
@@ -172,6 +173,8 @@ const TECH_LIST = [
         .querySelector("[data-icon-container]")
         .classList.add("shadow-blue-600");
 
+    const infoContainer = document.getElementById("tech-info-container");
+
     techContainer.forEach((button: HTMLElement) => {
         button.addEventListener("click", () => {
             const clickedTechnology = JSON.parse(button.dataset.tech);
@@ -194,6 +197,11 @@ const TECH_LIST = [
                 clickedTechnology.name;
             document.getElementById("tech-info-description").textContent =
                 clickedTechnology.description;
+
+            // Replay the swap animation
+            infoContainer.classList.remove("tech-info-swap");
+            void infoContainer.offsetWidth;
+            infoContainer.classList.add("tech-info-swap");
 
             // Manage active indicators
             document
@@ -226,5 +234,18 @@ const TECH_LIST = [
     }
     .hide-scroll-bar::-webkit-scrollbar {
         display: none;
+    }
+    @keyframes tech-info-swap {
+        from {
+            opacity: 0.35;
+            transform: translateY(-4px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .tech-info-swap {
+        animation: tech-info-swap 280ms ease-out;
     }
 </style>
