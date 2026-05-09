@@ -1,0 +1,38 @@
+# Matias Medina — Frontend Engineer
+
+> Personal portfolio of Matias Medina, a Frontend Engineer with 5+ years of experience building scalable React and Next.js applications. Based in Santiago, Chile; available for remote work with US/Canada teams. English C1, Spanish native.
+
+Currently at FloQast (via FullStack Labs), working on a micro-frontend architecture (single-spa) for 3,000+ Enterprise clients including Zoom and Snowflake. Previously led the frontend team at Kandui.cl, a FinTech startup. H-1B1 visa eligible, full EST/PST timezone overlap.
+
+## Identity
+
+- [LinkedIn](https://www.linkedin.com/in/matiasmg/): Professional profile, work history, and recommendations
+- [GitHub](https://github.com/matias-mg): Open source code and contributions
+- [Email](mailto:matiasmg.dev@gmail.com): Direct contact
+
+## Portfolio
+
+- [Portfolio (English)](https://matias-mg.github.io/portfolio/): Main site
+- [Portfolio (Español)](https://matias-mg.github.io/portfolio/es/): Spanish translation
+- [Portfolio (Português)](https://matias-mg.github.io/portfolio/pt/): Portuguese translation
+- [CV (PDF)](https://matias-mg.github.io/portfolio/cvs/matias-medina-cv.pdf): Resume
+
+## Skills
+
+- Frontend frameworks: React, Next.js
+- Languages: TypeScript, JavaScript (ES6+), HTML5, CSS3
+- State management: Redux, Zustand
+- Architecture: Micro-frontends (single-spa), Monorepo (Nx), Design Systems, SSR/SSG
+- Testing: Jest, Storybook, React Testing Library, Cypress
+- Performance: Core Web Vitals, accessibility (a11y), responsive design
+- Tooling: Git, CI/CD, Webpack, Vite, Tailwind CSS
+- AI workflows: Claude Code, Cursor, MCP (Model Context Protocol), context engineering, prompt engineering
+
+## Experience
+
+- FloQast (via FullStack Labs) — Frontend Engineer (Nov 2024 – Jan 2026, Remote, US)
+- Kandui.cl — React Engineer / Team Lead (Jan 2020 – Sep 2023, Santiago, Chile)
+
+## Education
+
+- Associate Degree in Software Engineering — Duoc UC (2018 – 2021, Santiago, Chile)
