@@ -6,7 +6,7 @@ const {
     company,
     from,
     to,
-    description,
+    achievements,
     techList,
     right = true,
     classStyles = "",
@@ -36,7 +36,13 @@ const dateFormater = new Intl.DateTimeFormat(lang, {
     <time class="text-gray-500 font-light text-sm">
         {dateFormater(from)} – {dateFormater(to)}
     </time>
-    <p class="my-4 font-light text-pretty leading-5">{description}</p>
+    {achievements && achievements.length > 0 && (
+        <ul class="my-4 pl-5 list-disc font-light text-pretty leading-5 space-y-1 text-left">
+            {achievements.map((item: string) => (
+                <li>{item}</li>
+            ))}
+        </ul>
+    )}
     <div class="flex flex-wrap gap-2">
         {
             techList.map((tech: string) => (

@@ -4,7 +4,9 @@ import KanduiLightThemeImage from "../images/kandui-light.webp";
 import KanduiDarkThemeImage from "../images/kandui-dark.webp";
 import RGCorpLightThemeImage from "../images/rg-corp-light.webp";
 import RGCorpDarkThemeImage from "../images/rg-corp-dark.webp";
+import FloQastImage from "../images/floqast.webp";
 import DoubleImageExperienceContainer from "./DoubleImageExperienceContainer.astro";
+import SingleImageJobExperienceContainer from "./SingleImageJobExperienceContainer.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -21,12 +23,35 @@ const t = useTranslations(lang);
         classStyles="mb-6"
     />
     <div class="flex flex-col gap-16 md:gap-32">
+        <SingleImageJobExperienceContainer
+            jobTitle={t("experience.floqast-job-title")}
+            company="FloQast (via FullStack Labs)"
+            from={new Date(Date.UTC(2024, 10, 1))}
+            to={new Date(Date.UTC(2026, 0, 1))}
+            achievements={t("experience.floqast-job-achievements")}
+            techList={[
+                "React",
+                "TypeScript",
+                "single-spa",
+                "Nx",
+                "Storybook",
+                "Jest",
+                "Cypress",
+                "Cursor",
+                "Claude Code",
+            ]}
+            img={FloQastImage}
+            imgSrc="floqast.webp"
+            imgLoading="lazy"
+            imgAlt="Matias Medina FloQast frontend engineering work screenshot"
+        />
         <DoubleImageExperienceContainer
+            right={false}
             jobTitle={t("experience.kandui-job-title")}
             company="Kandui.cl"
             from={new Date(Date.UTC(2022, 7, 1))}
             to={new Date(Date.UTC(2023, 8, 1))}
-            description={t("experience.kandui-job-description")}
+            achievements={t("experience.kandui-job-achievements")}
             techList={[
                 "Next.js",
                 "React",
@@ -39,8 +64,8 @@ const t = useTranslations(lang);
                 "styled-components",
                 "Django",
             ]}
-            leftImage={KanduiDarkThemeImage}
-            rightImage={KanduiLightThemeImage}
+            leftImage={KanduiLightThemeImage}
+            rightImage={KanduiDarkThemeImage}
             leftImageSrc="kandui-dark.webp"
             rightImageSrc="kandui-light.webp"
             loading="lazy"
@@ -49,12 +74,11 @@ const t = useTranslations(lang);
             rightImageAlt="Matias Medina Kandui.cl light theme main trading view"
         />
         <DoubleImageExperienceContainer
-            right={false}
             jobTitle={t("experience.rg-corp-job-title")}
             company="Kandui.cl"
             from={new Date(Date.UTC(2020, 0))}
             to={new Date(Date.UTC(2022, 6))}
-            description={t("experience.rg-corp-job-description")}
+            achievements={t("experience.rg-corp-job-achievements")}
             techList={[
                 "React",
                 "TypeScript",
@@ -65,8 +89,8 @@ const t = useTranslations(lang);
                 "CSS3",
                 "styled-components",
             ]}
-            leftImage={RGCorpLightThemeImage}
-            rightImage={RGCorpDarkThemeImage}
+            leftImage={RGCorpDarkThemeImage}
+            rightImage={RGCorpLightThemeImage}
             leftImageSrc="rg-corp-dark.webp"
             rightImageSrc="rg-corp-light.webp"
             loading="lazy"

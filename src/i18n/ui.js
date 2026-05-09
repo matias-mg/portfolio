@@ -29,10 +29,22 @@ export const ui = {
         // Experience translations
         "experience.prefix": "Summary of my",
         "experience.title": "Professional Experience",
+        "experience.floqast-job-title": "Frontend Engineer",
+        "experience.floqast-job-achievements": [
+            "Built and scaled React components for a micro-frontend architecture (single-spa) supporting 3,000+ Enterprise clients (e.g., Zoom, Snowflake).",
+            "Integrated AI agents (Cursor, Claude Code) with custom context engineering and workflows to ship production features ~2.5x faster, automating test generation end-to-end.",
+            "Expanded the Flo-UI design system with 25+ reusable React components using Compound Components and Custom Hooks patterns in Storybook, eliminating regression incidents across 14 consuming squads.",
+        ],
         "experience.kandui-job-title": "React Team Leader",
-        "experience.kandui-job-description": "Led UX/UI and React team at a FinTech startup, delivering investment-focused products and scalable, user-centric tools through strategic frontend development and design.",
+        "experience.kandui-job-achievements": [
+            "Led the frontend team of 5 engineers at a FinTech startup, architecting the technical roadmap to build investment web apps from scratch.",
+            "Mentored junior engineers and enforced strict code reviews, improving team delivery speed.",
+        ],
         "experience.rg-corp-job-title": "React Engineer",
-        "experience.rg-corp-job-description": "Designed and developed views for a FinTech startup, focused on user-friendly KYC forms and customer enrollment. Refactored legacy React components using hooks to enhance usability.",
+        "experience.rg-corp-job-achievements": [
+            "Developed accessible (a11y) KYC onboarding forms with React and TypeScript, increasing completion rates from 56% up to ~97%.",
+            "Refactored 80+ legacy class-based React components to function components and Custom Hooks, resolving critical rendering bottlenecks.",
+        ],
         // Technologies translations
         "technologies.prefix": "Some of my favorite",
         "technologies.title": "Technologies",
@@ -120,10 +132,22 @@ export const ui = {
         // Experience translations
         "experience.prefix": "Resumen de mi",
         "experience.title": "Experiencia profesional",
+        "experience.floqast-job-title": "Ingeniero Frontend",
+        "experience.floqast-job-achievements": [
+            "Construí y escalé componentes React para una arquitectura de micro-frontends (single-spa) que da soporte a más de 3.000 clientes enterprise (p. ej., Zoom, Snowflake).",
+            "Integré agentes de IA (Cursor, Claude Code) con context engineering y flujos de trabajo personalizados para enviar funcionalidades a producción ~2,5x más rápido, automatizando la generación de tests de extremo a extremo.",
+            "Amplié el design system Flo-UI con más de 25 componentes React reutilizables usando patrones de Compound Components y Custom Hooks en Storybook, eliminando incidencias de regresión en 14 squads consumidores.",
+        ],
         "experience.kandui-job-title": "Líder de equipo React UI/UX",
-        "experience.kandui-job-description": "Designado líder de equipo en una startup FinTech, desarrollando componentes escalables y enfocados en inversiones, esto centrado a mejorar la experiencia del usuario.",
+        "experience.kandui-job-achievements": [
+            "Lideré el equipo frontend de 5 ingenieros en una startup FinTech, definiendo el roadmap técnico para construir aplicaciones web de inversión desde cero.",
+            "Mentoreé a ingenieros junior e impuse revisiones de código estrictas, mejorando la velocidad de entrega del equipo.",
+        ],
         "experience.rg-corp-job-title": "Desarrollador web React",
-        "experience.rg-corp-job-description": "Diseño y desarrollo UI para una startup FinTech, principalmente enfocado en formulario KYC. Responsable de modernizar class-components de React, integrando hooks para mejorar la usabilidad y experiencia del usuario.",
+        "experience.rg-corp-job-achievements": [
+            "Desarrollé formularios de onboarding KYC accesibles (a11y) con React y TypeScript, aumentando la tasa de finalización del 56 % hasta ~97 %.",
+            "Refactoricé más de 80 componentes React legacy basados en clases a componentes funcionales y Custom Hooks, resolviendo cuellos de botella críticos de renderizado.",
+        ],
         // Technologies translations
         "technologies.prefix": "Algunas de mis",
         "technologies.title": "Tecnologías favoritas",
@@ -211,10 +235,22 @@ export const ui = {
         // Experience translations
         "experience.prefix": "Resumo da minha",
         "experience.title": "Experiência Profissional",
+        "experience.floqast-job-title": "Engenheiro Frontend",
+        "experience.floqast-job-achievements": [
+            "Construí e escalei componentes React para uma arquitetura de micro-frontends (single-spa) que dá suporte a mais de 3.000 clientes enterprise (ex.: Zoom, Snowflake).",
+            "Integrei agentes de IA (Cursor, Claude Code) com context engineering e fluxos de trabalho personalizados para entregar funcionalidades em produção ~2,5x mais rápido, automatizando a geração de testes de ponta a ponta.",
+            "Expandi o design system Flo-UI com mais de 25 componentes React reutilizáveis usando padrões de Compound Components e Custom Hooks no Storybook, eliminando incidentes de regressão em 14 squads consumidores.",
+        ],
         "experience.kandui-job-title": "Líder de Equipe React",
-        "experience.kandui-job-description": "Liderou a equipe de UX/UI e React em uma startup FinTech, entregando produtos focados em investimentos e ferramentas escaláveis e centradas no usuário por meio de desenvolvimento e design frontend estratégico.",
+        "experience.kandui-job-achievements": [
+            "Liderei o time frontend de 5 engenheiros em uma startup FinTech, arquitetando o roadmap técnico para construir aplicações web de investimento do zero.",
+            "Mentorei engenheiros juniores e apliquei revisões de código rigorosas, melhorando a velocidade de entrega do time.",
+        ],
         "experience.rg-corp-job-title": "Desenvolvedor React",
-        "experience.rg-corp-job-description": "Desenvolvi e desenhei interfaces para uma startup FinTech, com foco em formulários KYC amigáveis e no cadastro de clientes. Refatorei componentes React legados utilizando hooks para melhorar a usabilidade.",
+        "experience.rg-corp-job-achievements": [
+            "Desenvolvi formulários de onboarding KYC acessíveis (a11y) com React e TypeScript, aumentando a taxa de conclusão de 56% para ~97%.",
+            "Refatorei mais de 80 componentes React legados baseados em classes para componentes funcionais e Custom Hooks, resolvendo gargalos críticos de renderização.",
+        ],
         // Technologies translations
         "technologies.prefix": "Algumas das minhas",
         "technologies.title": "Tecnologias Favoritas",
