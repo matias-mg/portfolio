@@ -122,11 +122,11 @@ const TECH_LIST = [
         </div>
     </div>
     <div
-        class="flex flex-col gap-6 items-center p-4 bg-slate-900 mt-4 rounded-3xl border border-blue-600/20 sm:gap-6 sm:text-left sm:flex-row sm:items-center delay-[600ms] duration-[1000ms] taos:translate-y-[-50px] taos:opacity-0 [animation-iteration-count:infinite]"
+        class="flex flex-col gap-6 items-center p-0 bg-slate-900 mt-4 rounded-3xl border border-blue-600/20 sm:gap-6 sm:text-left sm:flex-row sm:items-center delay-[600ms] duration-[1000ms] taos:translate-y-[-50px] taos:opacity-0 [animation-iteration-count:infinite]"
         data-taos-offset="250"
     >
         <div
-            class="flex flex-row items-center justify-start w-full bg-gradient-to-br from-blue-600 to-slate-900 rounded-2xl p-4 gap-2 sm:justify-center sm:flex-col sm:items-start sm:text-left sm:min-w-48 sm:min-h-44 sm:max-w-48"
+            class="flex flex-row items-center justify-start w-full bg-gradient-to-br from-blue-600 to-slate-900 rounded-2xl p-4 gap-2 sm:justify-center sm:flex-col sm:text-left sm:min-w-48 sm:min-h-44 sm:max-w-48"
         >
             <div
                 id="tech-info-left-container"
@@ -143,18 +143,18 @@ const TECH_LIST = [
             </div>
             <p
                 id="tech-info-subtitle"
-                class="text-blue-100 text-base font-normal text-pretty"
+                class="text-blue-100 text-sm font-normal text-pretty text-center"
             >
                 {TECH_LIST[0].subtitle}
             </p>
         </div>
         <div class="flex flex-col md justify-center margin-auto gap-2">
-            <p id="tech-info-title" class="text-2xl text-blue-50 font-semibold">
+            <p id="tech-info-title" class="text-2xl text-blue-50 font-semibold sm:text-xl">
                 {TECH_LIST[0].name}
             </p>
             <p
                 id="tech-info-description"
-                class="text-base text-pretty text-blue-300 sm:text-lg"
+                class="text-lg text-pretty text-blue-300 sm:text-base"
             >
                 {TECH_LIST[0].description}
             </p>
