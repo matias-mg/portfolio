@@ -21,11 +21,11 @@ const TAOS_EXPERIENCE_CONTAINER_CLASSES =
     class={`flex flex-col items-center justify-between w-full lg:relative lg:flex-row`}
 >
     <div
-        class={`relative w-full lg:max-w-[768px] ${!right && "ml-auto"} group ${TAOS_IMG_CLASSES}`}
+        class={`job-image-wrapper relative w-full lg:max-w-[768px] ${!right && "ml-auto"} group ${TAOS_IMG_CLASSES}`}
         data-taos-offset="50"
     >
         <div
-            class="opacity-0 lg:opacity-40 absolute inset-0 bg-slate-950 transition-opacity z-10 group-hover:opacity-0 group-active:opacity-0"
+            class="dim-overlay opacity-0 lg:opacity-40 absolute inset-0 bg-slate-950 transition-opacity duration-500 z-10 pointer-events-none group-hover:opacity-0 group-active:opacity-0"
         >
         </div>
         <slot />
@@ -42,3 +42,40 @@ const TAOS_EXPERIENCE_CONTAINER_CLASSES =
         data-taos-offset="50"
     />
 </div>
+
+<style>
+    @media (min-width: 1024px) {
+        .job-image-wrapper.is-in-view .dim-overlay {
+            opacity: 0.1;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const wrappers = document.querySelectorAll<HTMLElement>(
+            ".job-image-wrapper",
+        );
+        if (!wrappers.length || !("IntersectionObserver" in window)) return;
+
+        const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    entry.target.classList.toggle(
+                        "is-in-view",
+                        entry.isIntersecting,
+                    );
+                });
+            },
+            {
+                // Activate when the image sits in the middle ~40% of the viewport
+                rootMargin: prefersCoarse ? "-30% 0px -30% 0px" : "-35% 0px -35% 0px",
+                threshold: 0,
+            },
+        );
+
+        wrappers.forEach((el) => observer.observe(el));
+    });
+</script>
