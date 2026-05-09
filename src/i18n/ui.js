@@ -81,7 +81,7 @@ export const ui = {
             },
             {
                 name: "Storybook",
-                subtitle: "UI component explorer for frontend developers",
+                subtitle: "UI component explorer",
                 description:
                     "Widely used in the frontend development community, Storybook allows developers to build, test, and showcase UI components in isolation, making UI development more organized and efficient.",
             },
@@ -184,7 +184,7 @@ export const ui = {
             },
             {
                 name: "Storybook",
-                subtitle: "Explorador de componentes UI para desarrolladores frontend",
+                subtitle: "Explorador de componentes UI",
                 description:
                     "Ampliamente utilizado en la comunidad de desarrollo frontend, Storybook permite a los desarrolladores construir, probar y mostrar componentes UI aislados, haciendo que el desarrollo de UI sea más organizado y eficiente.",
             },
@@ -287,7 +287,7 @@ export const ui = {
             },
             {
                 name: "Storybook",
-                subtitle: "Explorador de componentes UI para desenvolvedores frontend",
+                subtitle: "Explorador de componentes UI",
                 description:
                     "Ampliamente utilizado na comunidade de desenvolvimento frontend, o Storybook permite que os desenvolvedores construam, testem e mostrem componentes UI isoladamente, tornando o desenvolvimento de UI mais organizado e eficiente.",
             },
