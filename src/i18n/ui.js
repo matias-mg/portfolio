@@ -145,7 +145,7 @@ export const ui = {
         ],
         "experience.rg-corp-job-title": "Desarrollador web React",
         "experience.rg-corp-job-achievements": [
-            "Desarrollé formularios de onboarding KYC accesibles (a11y) con React y TypeScript, aumentando la tasa de finalización del 56 % hasta un ~97%.",
+            "Desarrollé formularios de onboarding KYC accesibles (a11y) con React y TypeScript, aumentando la tasa de finalización del 56% hasta un ~97%.",
             "Refactoricé +80 componentes React legacy basados en clases a componentes funcionales y Custom Hooks, resolviendo cuellos de botella críticos de renderizado.",
         ],
         // Technologies translations
