@@ -9,7 +9,7 @@ export const defaultLang = "en";
 export const ui = {
     en: {
         // Site translations
-        "site.title": "Matias Medina - React Web Developer and frontend expert",
+        "site.title": "Matias Medina - Frontend Engineer and React Developer",
         "site.description": "Matias Medina — Frontend Engineer with 5+ years in React, available for remote work with US/Canada teams. Specialized in scalable, user-centric UI.",
         "site.404-title": "Matias Medina - Page not found",
         "site.404-description": "This route has not been found.",
@@ -112,7 +112,7 @@ export const ui = {
     },
     es: {
         // Site translations
-        "site.title": "Matias Medina - Desarrollador Web React y experto en frontend",
+        "site.title": "Matias Medina - Desarrollador Web React y Experto en Frontend",
         "site.description": "Matias Medina, especializado en desarrollo web con 5+ años de experiencia en React y habilidades de liderazgo de equipo.",
         "site.404-title": "Matias Medina - Página no encontrada",
         "site.404-description": "Esta ruta no ha sido encontrada.",
