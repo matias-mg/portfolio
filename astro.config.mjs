@@ -26,7 +26,8 @@ export default defineConfig({
         es: "es",
         pt: "pt",
       },
-    }
+    },
+    lastmod: new Date(),
   })],
   i18n: {
     defaultLocale: "en",
