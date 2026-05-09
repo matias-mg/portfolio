@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { BASE_URL } from "../utils/constants";
 
-const { src = "", img, loading = "lazy", classStyles = "", alt, ...props } = Astro.props;
+const { src = "", img, loading = "lazy", fetchpriority, classStyles = "", alt, ...props } = Astro.props;
 const IMG_EXTENSION_REGEX = /^(.*)(\.[^.]+)$/;
 const [filename, imgExtension] = src.match(IMG_EXTENSION_REGEX).slice(1);
 ---
@@ -12,7 +12,7 @@ const [filename, imgExtension] = src.match(IMG_EXTENSION_REGEX).slice(1);
     style={`background-image: url(${BASE_URL}/${filename}-small${imgExtension});`}
     {...props}
 >
-    <Image src={img} loading={loading} class={classStyles} alt={alt} />
+    <Image src={img} loading={loading} fetchpriority={fetchpriority} class={classStyles} alt={alt} />
 </div>
 
 <style>
