@@ -51,9 +51,9 @@ export const ui = {
         "technologies.list": [
             {
                 name: "React",
-                subtitle: "A JavaScript library for building user interfaces",
+                subtitle: "JavaScript library for building UI",
                 description:
-                    "A widely-adopted library maintained by Meta, it makes creating interactive UIs straightforward, efficiently updating and rendering just the right components when data changes.",
+                    "A widely-adopted library maintained by Meta. It makes creating interactive UIs straightforward, efficiently updating and rendering just the right components when data changes.",
             },
             {
                 name: "Next.js",
@@ -63,13 +63,13 @@ export const ui = {
             },
             {
                 name: "GraphQL",
-                subtitle: "A query language for your API",
+                subtitle: "Query language for your API",
                 description:
                     "An open-source data query language originally developed by Facebook, GraphQL enables clients to request exactly the data they need, optimizing API performance and flexibility.",
             },
             {
                 name: "Tailwind CSS",
-                subtitle: "A utility-first CSS framework",
+                subtitle: "Utility-first CSS framework",
                 description:
                     "Highly regarded for its flexibility, Tailwind CSS provides low-level utility classes that allow developers to build fully custom designs without leaving their HTML.",
             },
@@ -154,13 +154,13 @@ export const ui = {
         "technologies.list": [
             {
                 name: "React",
-                subtitle: "Biblioteca UI para usuario web y nativas",
+                subtitle: "Biblioteca para UI web y nativas",
                 description:
-                    "Una biblioteca ampliamente adoptada y mantenida por Meta, facilita la creación de interfaces de usuario interactivas, actualizando y renderizando de manera eficiente solo los componentes necesarios cuando los datos cambian.",
+                    "Una biblioteca ampliamente adoptada y mantenida por Meta. Facilita la creación de interfaces de usuario interactivas, actualizando y renderizando de manera eficiente solo los componentes necesarios cuando los datos cambian.",
             },
             {
                 name: "Next.js",
-                subtitle: "El framework de React para la web",
+                subtitle: "Framework de React para la web",
                 description:
                     "Usado por algunas de las empresas más grandes del mundo, Next.js te permite crear aplicaciones web de alta calidad con el poder de los componentes de React.",
             },
@@ -172,7 +172,7 @@ export const ui = {
             },
             {
                 name: "Tailwind CSS",
-                subtitle: "Un framework CSS basado en utilidades",
+                subtitle: "Framework CSS basado en utilidades",
                 description:
                     "Muy valorado por su flexibilidad, Tailwind CSS proporciona clases de utilidad de bajo nivel que permiten a los desarrolladores crear diseños completamente personalizados sin salir de su HTML.",
             },
@@ -257,9 +257,9 @@ export const ui = {
         "technologies.list": [
             {
                 name: "React",
-                subtitle: "Uma biblioteca JavaScript para construção de interfaces de usuário",
+                subtitle: "Uma biblioteca JavaScript para construção de UI",
                 description:
-                    "Uma biblioteca amplamente adotada mantida pelo Meta, que facilita a criação de UIs interativas, atualizando e renderizando de forma eficiente apenas os componentes necessários quando os dados mudam.",
+                    "Uma biblioteca amplamente adotada mantida pelo Meta. Facilita a criação de UIs interativas, atualizando e renderizando de forma eficiente apenas os componentes necessários quando os dados mudam.",
             },
             {
                 name: "Next.js",
