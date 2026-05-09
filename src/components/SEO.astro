@@ -28,6 +28,8 @@ const ogImage = await getImage({
 });
 const ogImageURL = new URL(ogImage.src, `${SITE_URL}/`).href;
 
+const heroImage = await getImage({ src: ProfilePic });
+
 const ogImageAlt = t("seo.og-image-alt");
 const jobTitle = t("seo.job-title");
 
@@ -55,21 +57,55 @@ const jsonLd = {
 			knowsAbout: [
 				"React",
 				"Next.js",
-				"GraphQL",
-				"Tailwind CSS",
 				"TypeScript",
+				"JavaScript",
+				"GraphQL",
+				"Micro-Frontends",
+				"single-spa",
+				"Design Systems",
 				"Storybook",
 				"Jest",
 				"React Testing Library",
+				"Cypress",
+				"Web Performance",
+				"Core Web Vitals",
+				"Accessibility",
+				"Tailwind CSS",
 				"Frontend Engineering",
 				"User Interface Design",
+				"AI-assisted Development",
 			],
-			address: { "@type": "PostalAddress", addressCountry: "CL" },
+			address: {
+				"@type": "PostalAddress",
+				addressLocality: "Santiago",
+				addressCountry: "CL",
+			},
 			nationality: { "@type": "Country", name: "Chile" },
+			alumniOf: [
+				{
+					"@type": "EducationalOrganization",
+					name: "Duoc UC",
+					url: "https://www.duoc.cl/",
+					sameAs: "https://en.wikipedia.org/wiki/DuocUC",
+				},
+				{
+					"@type": "Organization",
+					name: "Kandui.cl",
+					url: "https://kandui.cl",
+				},
+			],
+			hasCredential: {
+				"@type": "EducationalOccupationalCredential",
+				name: "Associate Degree in Software Engineering",
+				credentialCategory: "degree",
+				educationalLevel: "Associate Degree",
+				recognizedBy: { "@type": "EducationalOrganization", name: "Duoc UC" },
+			},
 			hasOccupation: {
 				"@type": "Occupation",
 				name: "Frontend Engineer",
-				skills: "React, Next.js, TypeScript, GraphQL, Tailwind CSS",
+				skills:
+					"React, Next.js, TypeScript, GraphQL, Tailwind CSS, Micro-Frontends, Design Systems",
 				occupationLocation: { "@type": "Country", name: "Chile" },
 			},
 			sameAs: [
@@ -104,6 +140,10 @@ const jsonLd = {
 <meta name="application-name" content="Matias Medina" />
 <meta name="google-site-verification" content="-UIug7tDK_z1SBWDZN43q2WFU59vLHVYT-tAGETO-V0" />
 
+{!blockCanonical && (
+	<link rel="preload" as="image" href={heroImage.src} type="image/webp" fetchpriority="high" />
+)}
+
 {!blockCanonical && <link rel="canonical" href={transformedSiteURL} />}
 {languageAlternates.map(({ hreflang, href }) => (
 	<link rel="alternate" hreflang={hreflang} href={href} />
@@ -129,6 +169,9 @@ const jsonLd = {
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageURL} />
 <meta name="twitter:image:alt" content={ogImageAlt} />
+
+<link rel="me" href="https://www.linkedin.com/in/matiasmg/" />
+<link rel="me" href="https://github.com/matias-mg" />
 
 <link rel="icon" href={`${BASE_URL}/favicon.ico`} sizes="any" />
 <link rel="icon" href={`${BASE_URL}/favicon.svg`} type="image/svg+xml" />
