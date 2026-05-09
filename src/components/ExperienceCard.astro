@@ -22,7 +22,7 @@ const dateFormater = new Intl.DateTimeFormat(lang, {
 ---
 
 <article
-    class={`${right ? "right-0" : "left-0"} w-full max-w-[640px] bg-slate-900 m-auto -mt-10 p-4 py-5 h-fit rounded-lg transition-all border-2 border-slate-900 hover:border-blue-950 z-30 md:mt-0 md:p-6 md:py-7 lg:absolute ${classStyles}`}
+    class={`${right ? "right-0" : "left-0"} w-full max-w-[680px] min-h-[288px] flex flex-col justify-center bg-slate-900 m-auto -mt-10 p-4 py-5 h-fit rounded-lg transition-all border-2 border-slate-900 hover:border-blue-950 z-30 md:mt-0 md:p-6 md:py-7 lg:absolute ${classStyles}`}
     {...props}
 >
     <h3
@@ -37,9 +37,9 @@ const dateFormater = new Intl.DateTimeFormat(lang, {
         {dateFormater(from)} – {dateFormater(to)}
     </time>
     {achievements && achievements.length > 0 && (
-        <ul class="my-4 pl-5 list-disc font-light text-pretty leading-5 space-y-1 text-left">
+        <ul class="my-4 pl-5 list-disc marker:text-blue-600/70 font-light text-pretty text-sm leading-relaxed space-y-2 text-left">
             {achievements.map((item: string) => (
-                <li>{item}</li>
+                <li class="pl-1">{item}</li>
             ))}
         </ul>
     )}
