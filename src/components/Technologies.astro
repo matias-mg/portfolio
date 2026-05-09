@@ -174,36 +174,14 @@ const TECH_LIST = [
         .classList.add("shadow-blue-600");
 
     const infoContainer = document.getElementById("tech-info-container");
+    const FADE_OUT_MS = 140;
+    let swapTimer: number | undefined;
 
     techContainer.forEach((button: HTMLElement) => {
         button.addEventListener("click", () => {
             const clickedTechnology = JSON.parse(button.dataset.tech);
-            const img = document.getElementById(
-                "details-icon",
-            ) as HTMLImageElement;
-            const techInfoLeftContainer = document.getElementById(
-                "tech-info-left-container",
-            );
 
-            // Update the image and container styles
-            img.src = clickedTechnology.iconRoute;
-            img.alt = `${clickedTechnology.name} logo`;
-            techInfoLeftContainer.className = `${techInfoLeftContainer.dataset.baseStyles} ${clickedTechnology.classStyles}`;
-
-            // Update the text content
-            document.getElementById("tech-info-subtitle").textContent =
-                clickedTechnology.subtitle;
-            document.getElementById("tech-info-title").textContent =
-                clickedTechnology.name;
-            document.getElementById("tech-info-description").textContent =
-                clickedTechnology.description;
-
-            // Replay the swap animation
-            infoContainer.classList.remove("tech-info-swap");
-            void infoContainer.offsetWidth;
-            infoContainer.classList.add("tech-info-swap");
-
-            // Manage active indicators
+            // Manage active indicators (immediate click feedback)
             document
                 .querySelectorAll("[data-circle-active-indicator]")
                 .forEach((indicator) => {
@@ -224,6 +202,37 @@ const TECH_LIST = [
             circleActiveIndicator.classList.remove("hidden");
             circleActiveIndicator.classList.add("absolute");
             iconContainerActiveIndicator.classList.add("shadow-blue-600");
+
+            // Phase 1: fade the panel out
+            window.clearTimeout(swapTimer);
+            infoContainer.classList.remove("tech-info-entering");
+            void infoContainer.offsetWidth;
+            infoContainer.classList.add("tech-info-leaving");
+
+            // Phase 2: once invisible, swap content and fade back in
+            swapTimer = window.setTimeout(() => {
+                const img = document.getElementById(
+                    "details-icon",
+                ) as HTMLImageElement;
+                const techInfoLeftContainer = document.getElementById(
+                    "tech-info-left-container",
+                );
+
+                img.src = clickedTechnology.iconRoute;
+                img.alt = `${clickedTechnology.name} logo`;
+                techInfoLeftContainer.className = `${techInfoLeftContainer.dataset.baseStyles} ${clickedTechnology.classStyles}`;
+
+                document.getElementById("tech-info-subtitle").textContent =
+                    clickedTechnology.subtitle;
+                document.getElementById("tech-info-title").textContent =
+                    clickedTechnology.name;
+                document.getElementById("tech-info-description").textContent =
+                    clickedTechnology.description;
+
+                infoContainer.classList.remove("tech-info-leaving");
+                void infoContainer.offsetWidth;
+                infoContainer.classList.add("tech-info-entering");
+            }, FADE_OUT_MS);
         });
     });
 </script>
@@ -235,17 +244,26 @@ const TECH_LIST = [
     .hide-scroll-bar::-webkit-scrollbar {
         display: none;
     }
-    @keyframes tech-info-swap {
+    @keyframes tech-info-out {
+        to {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+    }
+    @keyframes tech-info-in {
         from {
-            opacity: 0.35;
-            transform: translateY(-4px);
+            opacity: 0;
+            transform: translateY(-6px);
         }
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-    .tech-info-swap {
-        animation: tech-info-swap 280ms ease-out;
+    .tech-info-leaving {
+        animation: tech-info-out 140ms ease-in forwards;
+    }
+    .tech-info-entering {
+        animation: tech-info-in 220ms ease-out;
     }
 </style>
