@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter";
+import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "../styles/global.css";
 import { getLangFromUrl } from "../i18n/utils";
 import { BASE_URL } from "../utils/constants";
@@ -13,6 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
 	<head>
+		<link rel="preload" href={interLatinWoff2} as="font" type="font/woff2" crossorigin />
 		<SEO {title} {description} {blockCanonical} />
 		<script is:inline>
 			document.documentElement.classList.add("js");
