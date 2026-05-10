@@ -101,7 +101,7 @@ export const ui = {
         // Footer translations
         "footer.self-description": "Crafting pixel-perfect and performant web experiences. Passionate about React, Next.js and modern frontend technologies.",
         "footer.figma-title": "Pixel-Perfect Development",
-        "footer.figma-description": "Curious about the design process? Compare this site with its Figma design to see how closely the final product aligns with pixel-perfect precision.",
+        "footer.figma-description": "Curious about the design process? Compare this site with the original Figma I designed — slightly outdated now, but the blueprint this build was based on.",
         "footer.figma-button-text": "View Figma Design",
         "footer.copyright": "Designed & Developed by Matias Medina.",
         "footer.built-with": "Built with Astro, Vanilla JS and Tailwind CSS.",
@@ -204,7 +204,7 @@ export const ui = {
         // Footer translations
         "footer.self-description": "Creando experiencias web precisas y eficientes. Apasionado por React, Next.js y tecnologías frontend modernas.",
         "footer.figma-title": 'Desarrollo Pixel-Perfect',
-        "footer.figma-description": "¿Curioso sobre el proceso de diseño? Compara este sitio con su diseño en Figma para ver lo cerca que se alinea el producto final con la precisión pixel-perfect del diseño.",
+        "footer.figma-description": "¿Curioso sobre el proceso de diseño? Compara este sitio con el Figma original que diseñé — algo desactualizado hoy, pero es la base sobre la que se construyó.",
         "footer.figma-button-text": "Ver diseño en Figma",
         "footer.copyright": "Diseñado y desarrollado por Matias Medina.",
         "footer.built-with": "Construído con Astro, Vanilla JS y Tailwind CSS.",
@@ -307,7 +307,7 @@ export const ui = {
         // Footer translations
         "footer.self-description": "Criando experiências web precisas e eficientes. Apaixonado por React, Next.js e tecnologias frontend modernas.",
         "footer.figma-title": "Desenvolvimento Pixel-Perfect",
-        "footer.figma-description": "Curioso sobre o processo de design? Compare este site com seu design no Figma para ver quão alinhado está o produto final com a precisão pixel-perfect.",
+        "footer.figma-description": "Curioso sobre o processo de design? Compare este site com o Figma original que projetei — um pouco desatualizado hoje, mas a base sobre a qual foi construído.",
         "footer.figma-button-text": "Ver design no Figma",
         "footer.copyright": "Projetado & Desenvolvido por Matias Medina.",
         "footer.built-with": "Construído com Astro, Vanilla JS e Tailwind CSS.",
