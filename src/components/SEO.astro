@@ -42,6 +42,13 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@graph": [
 		{
+			"@type": "ProfilePage",
+			"@id": `${transformedSiteURL}#profile`,
+			url: transformedSiteURL,
+			inLanguage: lang,
+			mainEntity: { "@id": `${SITE_URL}/#person` },
+		},
+		{
 			"@type": "Person",
 			"@id": `${SITE_URL}/#person`,
 			name: "Matias Medina",
@@ -53,60 +60,6 @@ const jsonLd = {
 			jobTitle,
 			description: t("site.description"),
 			email: "mailto:matiasmg.dev@gmail.com",
-			knowsLanguage: ["en", "es", "pt"],
-			knowsAbout: [
-				"React",
-				"Next.js",
-				"TypeScript",
-				"JavaScript",
-				"GraphQL",
-				"Microfrontends",
-				"Design Systems",
-				"Storybook",
-				"Jest",
-				"React Testing Library",
-				"Cypress",
-				"Web Performance",
-				"Core Web Vitals",
-				"Accessibility",
-				"Tailwind CSS",
-				"Frontend Engineering",
-				"User Interface Design",
-				"AI-assisted Development",
-			],
-			address: {
-				"@type": "PostalAddress",
-				addressLocality: "Santiago",
-				addressCountry: "CL",
-			},
-			nationality: { "@type": "Country", name: "Chile" },
-			alumniOf: [
-				{
-					"@type": "EducationalOrganization",
-					name: "Duoc UC",
-					url: "https://www.duoc.cl/",
-					sameAs: "https://en.wikipedia.org/wiki/DuocUC",
-				},
-				{
-					"@type": "Organization",
-					name: "Kandui.cl",
-					url: "https://kandui.cl",
-				},
-			],
-			hasCredential: {
-				"@type": "EducationalOccupationalCredential",
-				name: "Associate Degree in Software Engineering",
-				credentialCategory: "degree",
-				educationalLevel: "Associate Degree",
-				recognizedBy: { "@type": "EducationalOrganization", name: "Duoc UC" },
-			},
-			hasOccupation: {
-				"@type": "Occupation",
-				name: "Frontend Engineer",
-				skills:
-					"React, Next.js, TypeScript, GraphQL, Tailwind CSS, Micro-Frontends, Design Systems",
-				occupationLocation: { "@type": "Country", name: "Chile" },
-			},
 			sameAs: [
 				"https://www.linkedin.com/in/matiasmg/",
 				"https://github.com/matias-mg",
@@ -144,10 +97,10 @@ const jsonLd = {
 )}
 
 {!blockCanonical && <link rel="canonical" href={transformedSiteURL} />}
-{languageAlternates.map(({ hreflang, href }) => (
+{!blockCanonical && languageAlternates.map(({ hreflang, href }) => (
 	<link rel="alternate" hreflang={hreflang} href={href} />
 ))}
-<link rel="alternate" hreflang="x-default" href={`${SITE_URL}/`} />
+{!blockCanonical && <link rel="alternate" hreflang="x-default" href={`${SITE_URL}/`} />}
 
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Matias Medina" />
@@ -177,4 +130,4 @@ const jsonLd = {
 <link rel="apple-touch-icon" href={`${BASE_URL}/apple-touch-icon.png`} />
 <link rel="manifest" href={`${BASE_URL}/manifest.webmanifest`} />
 
-<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+{!blockCanonical && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}

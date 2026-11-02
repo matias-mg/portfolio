@@ -154,22 +154,25 @@ const {
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const containers = document.querySelectorAll('.image-comparison');
+    const containers = document.querySelectorAll<HTMLElement>('.image-comparison');
 
     containers.forEach(function (container: HTMLElement) {
-      const handle = container.querySelector('.slider-handle') as HTMLElement;
-      const rightImage = container.querySelector('.image-right') as HTMLElement;
+      const handleElement = container.querySelector<HTMLElement>('.slider-handle');
+      const rightImageElement = container.querySelector<HTMLElement>('.image-right');
+      if (!handleElement || !rightImageElement) return;
+      const handle = handleElement;
+      const rightImage = rightImageElement;
       let isDragging = false;
       let animationRemoved = false;
       let lastPosition = 50;
       let lastX = 0;
       let restoreTimer: ReturnType<typeof setTimeout> | null = null;
 
-      function getPercentage(pixelValue) {
+      function getPercentage(pixelValue: number) {
         return (pixelValue / container.offsetWidth) * 100;
       }
 
-      function updateSliderPosition(x) {
+      function updateSliderPosition(x: number) {
         const percentage = Math.max(0, Math.min(100, getPercentage(x)));
         handle.style.left = percentage + '%';
         handle.style.transform = 'translateX(-50%)';
@@ -177,7 +180,7 @@ const {
         lastPosition = percentage;
       }
 
-      function handleDragStart(e) {
+      function handleDragStart(e: MouseEvent | TouchEvent) {
         isDragging = true;
         cancelRestore();
         removeAnimation();
@@ -218,10 +221,10 @@ const {
         scheduleRestore();
       }
 
-      function handleDragMove(e) {
+      function handleDragMove(e: MouseEvent | TouchEvent) {
         if (!isDragging) return;
-        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-        if (clientX) {
+        const clientX = e instanceof MouseEvent ? e.clientX : e.touches[0]?.clientX;
+        if (clientX !== undefined) {
           lastX = clientX - container.getBoundingClientRect().left;
           requestAnimationFrame(updatePosition);
         }
