@@ -154,15 +154,16 @@ const languageLabel = languages[lang]
   function handleScroll() {
     const currentScrollY = window.scrollY;
 
-    navbar.classList.toggle("bg-gradient-to-b", currentScrollY > 100);
-    navbar.classList.toggle("-translate-y-full", currentScrollY > 40 && currentScrollY > lastScrollY);
+    navbar?.classList.toggle("bg-gradient-to-b", currentScrollY > 100);
+    navbar?.classList.toggle("-translate-y-full", currentScrollY > 40 && currentScrollY > lastScrollY);
 
     lastScrollY = currentScrollY;
   }
 
-  function handleClickOutside(element, button, closeFn) {
-    return function (event) {
+  function handleClickOutside(element: Element | null, button: Element | null, closeFn: () => void) {
+    return function (event: MouseEvent) {
       const target = event.target;
+      if (!element || !button || !(target instanceof Node)) return;
       const isClickInside = element.contains(target);
       const isClickOnButton = button.contains(target);
 
@@ -172,18 +173,18 @@ const languageLabel = languages[lang]
     };
   }
 
-  function toggleClassOnElement(element, className = "hidden") {
+  function toggleClassOnElement(element: Element | null, className = "hidden") {
     return function () {
-      element.classList.toggle(className);
+      element?.classList.toggle(className);
     };
   }
 
   window.addEventListener("scroll", handleScroll);
 
-  mobileOpenMenuButton.addEventListener("click", toggleClassOnElement(mobileMenu));
-  mobileCloseMenuButton.addEventListener("click", toggleClassOnElement(mobileMenu, "hidden"));
-  desktopLanguageDropdownButton.addEventListener("click", toggleClassOnElement(desktopLanguageDropdown));
-  mobileLanguageDropdownButton.addEventListener("click", toggleClassOnElement(mobileLanguageDropdown));
+  mobileOpenMenuButton?.addEventListener("click", toggleClassOnElement(mobileMenu));
+  mobileCloseMenuButton?.addEventListener("click", toggleClassOnElement(mobileMenu, "hidden"));
+  desktopLanguageDropdownButton?.addEventListener("click", toggleClassOnElement(desktopLanguageDropdown));
+  mobileLanguageDropdownButton?.addEventListener("click", toggleClassOnElement(mobileLanguageDropdown));
 
   document.addEventListener("click", handleClickOutside(mobileMenu, mobileOpenMenuButton, toggleClassOnElement(mobileMenu, "hidden")));
   document.addEventListener("click", handleClickOutside(desktopLanguageDropdown, desktopLanguageDropdownButton, toggleClassOnElement(desktopLanguageDropdown, "hidden")));

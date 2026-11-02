@@ -41,6 +41,7 @@ const [filename, imgExtension] = src.match(IMG_EXTENSION_REGEX).slice(1);
             container.classList.add("loaded");
         }
 
+        if (!img) return;
         if (img.complete) {
             toggleLoadedClass();
         } else {

@@ -1,24 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
-import robotsTxt from 'astro-robots-txt';
 import { defaultLang } from './src/i18n/ui';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://matias-mg.github.io/portfolio/",
+  site: "https://matias-mg.github.io",
+  base: "/portfolio",
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [robotsTxt({
-    policy: [
-      {
-        userAgent: '*',
-        disallow: '/cvs/',
-        allow: '/',
-      }
-    ]
-  }), sitemap({
+  integrations: [sitemap({
     i18n: {
       defaultLocale: defaultLang,
       locales: {
@@ -27,7 +19,6 @@ export default defineConfig({
         pt: "pt",
       },
     },
-    lastmod: new Date(),
   })],
   i18n: {
     defaultLocale: "en",

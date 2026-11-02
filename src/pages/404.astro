@@ -5,7 +5,7 @@ import { useTranslations } from "../i18n/utils";
 import { BASE_URL } from "../utils/constants";
 import Layout from "../layouts/Layout.astro";
 
-const localeToUse = Astro.preferredLocale || Astro.currentLocale || defaultLang;
+const localeToUse = defaultLang;
 const t = useTranslations(localeToUse);
 ---
 

@@ -11,64 +11,67 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const techList = ui[lang]["technologies.list"];
 
+function getTech(name: string) {
+    const tech = techList.find((item) => item.name === name);
+    if (!tech) throw new Error(`Missing technology translation: ${name} (${lang})`);
+    return tech;
+}
+
 const TECH_LIST = [
     {
         name: "React",
         classStyles: "bg-black",
-        subtitle: techList.find((t) => t.name === "React").subtitle,
-        description: techList.find((t) => t.name === "React").description,
+        subtitle: getTech("React").subtitle,
+        description: getTech("React").description,
         iconRoute: `${BASE_URL}/icons/react-icon.svg`,
     },
     {
         name: "Next.js",
         classStyles: "bg-[#D9D9D9]",
-        subtitle: techList.find((t) => t.name === "Next.js").subtitle,
-        description: techList.find((t) => t.name === "Next.js").description,
+        subtitle: getTech("Next.js").subtitle,
+        description: getTech("Next.js").description,
         iconRoute: `${BASE_URL}/icons/nextjs-icon.svg`,
     },
     {
         name: "GraphQL",
         classStyles: "bg-gradient-to-t from-[#1B0514] to-[#37162C]",
-        subtitle: techList.find((t) => t.name === "GraphQL").subtitle,
-        description: techList.find((t) => t.name === "GraphQL").description,
+        subtitle: getTech("GraphQL").subtitle,
+        description: getTech("GraphQL").description,
         iconRoute: `${BASE_URL}/icons/graphql-icon.svg`,
     },
     {
         name: "Tailwind CSS",
         classStyles: "bg-[#fff]",
-        subtitle: techList.find((t) => t.name === "Tailwind CSS").subtitle,
-        description: techList.find((t) => t.name === "Tailwind CSS")
-            .description,
+        subtitle: getTech("Tailwind CSS").subtitle,
+        description: getTech("Tailwind CSS").description,
         iconRoute: `${BASE_URL}/icons/tailwind-icon.svg`,
     },
     {
         name: "TypeScript",
         classStyles: "bg-[#007ACC]",
-        subtitle: techList.find((t) => t.name === "TypeScript").subtitle,
-        description: techList.find((t) => t.name === "TypeScript").description,
+        subtitle: getTech("TypeScript").subtitle,
+        description: getTech("TypeScript").description,
         iconRoute: `${BASE_URL}/icons/typescript-icon.svg`,
     },
     {
         name: "Storybook",
         classStyles: "bg-[#fff]",
-        subtitle: techList.find((t) => t.name === "Storybook").subtitle,
-        description: techList.find((t) => t.name === "Storybook").description,
+        subtitle: getTech("Storybook").subtitle,
+        description: getTech("Storybook").description,
         iconRoute: `${BASE_URL}/icons/storybook-icon.svg`,
     },
     {
         name: "Jest",
         classStyles: "bg-gradient-to-t from-[#461A20] to-[#77343E]",
-        subtitle: techList.find((t) => t.name === "Jest").subtitle,
-        description: techList.find((t) => t.name === "Jest").description,
+        subtitle: getTech("Jest").subtitle,
+        description: getTech("Jest").description,
         iconRoute: `${BASE_URL}/icons/jest-icon.svg`,
     },
     {
         name: "React Testing Library",
         classStyles: "bg-gradient-to-t from-[#741618] to-[#A92321]",
-        subtitle: techList.find((t) => t.name === "React Testing Library")
-            .subtitle,
-        description: techList.find((t) => t.name === "React Testing Library")
-            .description,
+        subtitle: getTech("React Testing Library").subtitle,
+        description: getTech("React Testing Library").description,
         iconRoute: `${BASE_URL}/icons/testinglibrary-icon.svg`,
     },
 ];
@@ -168,10 +171,10 @@ const TECH_LIST = [
 </section>
 
 <script>
-    const techContainer = document.querySelectorAll("[data-tech]");
+    const techContainer = document.querySelectorAll<HTMLElement>("[data-tech]");
     document
         .querySelector("[data-icon-container]")
-        .classList.add("shadow-blue-600");
+        ?.classList.add("shadow-blue-600");
 
     const infoContainer = document.getElementById("tech-info-container");
     const FADE_OUT_MS = 140;
@@ -179,6 +182,7 @@ const TECH_LIST = [
 
     techContainer.forEach((button: HTMLElement) => {
         button.addEventListener("click", () => {
+            if (!button.dataset.tech || !infoContainer) return;
             const clickedTechnology = JSON.parse(button.dataset.tech);
 
             // Manage active indicators (immediate click feedback)
@@ -199,9 +203,9 @@ const TECH_LIST = [
             const iconContainerActiveIndicator = button.querySelector(
                 "[data-icon-container]",
             );
-            circleActiveIndicator.classList.remove("hidden");
-            circleActiveIndicator.classList.add("absolute");
-            iconContainerActiveIndicator.classList.add("shadow-blue-600");
+            circleActiveIndicator?.classList.remove("hidden");
+            circleActiveIndicator?.classList.add("absolute");
+            iconContainerActiveIndicator?.classList.add("shadow-blue-600");
 
             // Phase 1: fade the panel out
             window.clearTimeout(swapTimer);
@@ -218,15 +222,19 @@ const TECH_LIST = [
                     "tech-info-left-container",
                 );
 
+                const subtitle = document.getElementById("tech-info-subtitle");
+                const title = document.getElementById("tech-info-title");
+                const description = document.getElementById("tech-info-description");
+                if (!img || !techInfoLeftContainer || !subtitle || !title || !description) return;
                 img.src = clickedTechnology.iconRoute;
                 img.alt = `${clickedTechnology.name} logo`;
                 techInfoLeftContainer.className = `${techInfoLeftContainer.dataset.baseStyles} ${clickedTechnology.classStyles}`;
 
-                document.getElementById("tech-info-subtitle").textContent =
+                subtitle.textContent =
                     clickedTechnology.subtitle;
-                document.getElementById("tech-info-title").textContent =
+                title.textContent =
                     clickedTechnology.name;
-                document.getElementById("tech-info-description").textContent =
+                description.textContent =
                     clickedTechnology.description;
 
                 infoContainer.classList.remove("tech-info-leaving");
