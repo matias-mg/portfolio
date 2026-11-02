@@ -7,6 +7,8 @@ import { defaultLang } from './src/i18n/ui';
 // https://astro.build/config
 export default defineConfig({
   site: "https://matias-mg.github.io/portfolio/",
+  // Preserve Astro 6's whitespace handling when rendering inline elements.
+  compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
   },
