@@ -5,8 +5,8 @@ import { useTranslations } from "../i18n/utils";
 import { BASE_URL } from "../utils/constants";
 import Layout from "../layouts/Layout.astro";
 
-const localeToUse = defaultLang;
-const t = useTranslations(localeToUse);
+// GitHub Pages serves this prerendered page without request headers.
+const t = useTranslations(defaultLang);
 ---
 
 <Layout
