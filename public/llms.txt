@@ -2,7 +2,7 @@
 
 > Personal portfolio of Matias Medina, a Frontend Engineer with 5+ years of experience building scalable React and Next.js applications. Based in Santiago, Chile; available for remote work with US/Canada teams. English C1, Spanish native.
 
-Currently at FloQast (via FullStack Labs), working on a micro-frontend architecture for 3,000+ Enterprise clients including Zoom and Snowflake. Previously led the frontend team at Kandui.cl, a FinTech startup. H-1B1 visa eligible, full EST/PST timezone overlap.
+Worked at FloQast (via FullStack Labs) until January 2026 on a micro-frontend architecture for 3,000+ Enterprise clients including Zoom and Snowflake. Previously led the frontend team at Kandui.cl, a FinTech startup. H-1B1 visa eligible, full EST/PST timezone overlap.
 
 ## Identity
 
