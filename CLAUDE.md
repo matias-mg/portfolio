@@ -42,7 +42,7 @@ Three locales: `en` (default, no prefix), `es` (`/es/`), `pt` (`/pt/`). Configur
 
 `output: 'static'` plus the deploy workflow passes `--base "${{ steps.pages.outputs.base_path }}"` to `astro build`. Anything referenced by absolute path in client-rendered HTML must be prefixed with `import.meta.env.BASE_URL` — see `src/components/Technologies.astro` where every `iconRoute` is built as `${base}/icons/...`. Astro's `<Image>` and bundler-resolved imports handle the base automatically; raw `src="/foo"` strings do not.
 
-PDFs in `public/cvs/` are blocked from indexing via `astro-robots-txt`. A single `matias-medina-cv.pdf` is served across all locales.
+The CV in `public/cvs/` is publicly accessible and may be indexed. A single `matias-medina-cv.pdf` is served across all locales. A robots.txt for this project would need to be at the host root to control crawling; blocking crawling alone does not prevent indexing.
 
 ### Scroll animations via `taos`
 

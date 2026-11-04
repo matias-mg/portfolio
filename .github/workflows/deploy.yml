@@ -51,6 +51,7 @@ jobs:
           if [ "$GITHUB_REF_NAME" = "staging" ]; then
             pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}/staging"
             mv dist staging-dist
+            rm -f staging-dist/sitemap-index.xml staging-dist/sitemap-[0-9]*.xml
             cd .main && pnpm install && pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}" && cd ..
             mv .main/dist dist
             mkdir -p dist/staging
