@@ -50,6 +50,7 @@ const t = useTranslations(lang);
         </p>
         <Button
           href={FIGMA_LINK}
+          data-umami-event="figma-click"
           classStyles="w-full py-3 justify-center md:justify-start md:py-2 md:w-fit"
         >
           {t("footer.figma-button-text")}
@@ -78,6 +79,7 @@ const t = useTranslations(lang);
     </p>
     <a
       href="https://github.com/matias-mg/portfolio"
+      data-umami-event="github-click"
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-blue-600 m-auto w-fit leading-none"

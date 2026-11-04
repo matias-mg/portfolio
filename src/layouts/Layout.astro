@@ -27,6 +27,7 @@ const analyticsEnabled = import.meta.env.PROD && import.meta.env.BASE_URL.replac
 							tracker.src = "https://cloud.umami.is/script.js";
 							tracker.defer = true;
 							tracker.dataset.websiteId = umamiWebsiteId;
+							tracker.dataset.performance = "true";
 							tracker.dataset.domains = "matias-mg.github.io";
 							tracker.dataset.excludeSearch = "true";
 							tracker.dataset.excludeHash = "true";

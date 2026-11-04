@@ -45,7 +45,7 @@ const CV_DOWNLOAD_FILENAME = `CV Matias Medina.pdf`
         <div
             class="flex justify-center items-center gap-2 sm:gap-4 md:justify-start"
         >
-            <HoverButton href={CV_DOWNLOAD_URL} download={CV_DOWNLOAD_FILENAME}>
+            <HoverButton href={CV_DOWNLOAD_URL} download={CV_DOWNLOAD_FILENAME} data-umami-event="cv-download">
                 {t("hero.download-button")}
                 <DownloadIcon class="ml size-4" />
             </HoverButton>
@@ -54,6 +54,7 @@ const CV_DOWNLOAD_FILENAME = `CV Matias Medina.pdf`
                 px="px-0"
                 size="size-11"
                 href="mailto:matiasmg.dev@gmail.com"
+                data-umami-event="email-click"
                 ariaLabel="Email Icon"
             >
                 <EmailIcon class="size-5" />
@@ -63,6 +64,7 @@ const CV_DOWNLOAD_FILENAME = `CV Matias Medina.pdf`
                 px="px-0"
                 size="size-11"
                 href="https://www.linkedin.com/in/matiasmg/"
+                data-umami-event="linkedin-click"
                 ariaLabel="LinkedIn Icon"
             >
                 <LinkedInIcon class="size-4" />
