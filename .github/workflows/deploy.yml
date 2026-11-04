@@ -47,6 +47,8 @@ jobs:
         run: pnpm install
 
       - name: Build
+        env:
+          UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
         run: |
           if [ "$GITHUB_REF_NAME" = "staging" ]; then
             pnpm astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}/staging"
